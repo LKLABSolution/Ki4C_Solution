@@ -1,0 +1,602 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LKLabHome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <!-- css -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/resources/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="/resources/css/jcarousel.css" rel="stylesheet"/>
+    <link href="/resources/css/flexslider.css" rel="stylesheet"/>
+    <link href="/resources/css/style.css" rel="stylesheet"/>
+
+    <!-- Theme skin -->
+    <link href="/resources/skins/default.css" rel="stylesheet"/>
+
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.js"></script>
+    <script src="/resources/js/jquery.easing.1.3.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/jquery.fancybox.pack.js"></script>
+    <script src="/resources/js/jquery.fancybox-media.js"></script>
+    <script src="/resources/js/google-code-prettify/prettify.js"></script>
+    <script src="/resources/js/portfolio/jquery.quicksand.js"></script>
+    <script src="/resources/js/portfolio/setting.js"></script>
+    <script src="/resources/js/jquery.flexslider.js"></script>
+    <script src="/resources/js/animate.js"></script>
+    <script src="/resources/js/custom.js"></script>
+
+    <link href="~/css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+<!-- 컨텐츠 영역 : s -->
+<div id="contents_wrap">
+    <header></header>
+    <!-- <div class="menu_loacation">
+
+          <div class="container">
+             <a href="/Main/PUB" class="home" title="메인페이지로 이동"></a>
+             <span class="depth pointer" onClick="document.location.href='/82_Menu/JoinStep1/PUB';">회원가입</span>
+             <span class="depth"><b>약관 및 개인정보취급방침 동의</b></span>
+         </div>
+     </div> -->
+    <script type="text/javascript">
+            
+        function agreeCheck(frm) {
+            const agreeAll = document.getElementById("agreeAll");
+            const chk = agreeAll.checked;
+            if (frm.checkButton.disabled == true && chk == true){
+                frm.checkButton.disabled = false
+                $("input:radio[id=agr_y]").prop("checked", true);
+                $("input:radio[id=prv_y]").prop("checked", true);
+            }
+            else {
+                frm.checkButton.disabled = true
+            }
+        }
+
+    </script>
+
+
+    <div class="contents">
+        <div class="container">
+            <h2>회원가입</h2>
+
+            <div class="member_step">
+                <span class="current">약관 및 개인정보취급방침 동의</span>
+                <span>회원 기본정보 입력</span>
+                <span>가입 완료</span>
+            </div>
+            <form name="form">
+                <div class="join_area">
+                    <div class="section">
+                        <h3>이용약관</h3>
+                        <div>
+                            <div class="join_cnt">
+                                <ul class="depth01">
+                                    <li>
+                                        <h4>제1조 (목적)</h4>
+                                        이 약관은 케이아이포씨(Ki4C )(이하 ‘회사’라 한다)가 제공하고 운영하는 인터넷 웹사이트(이하 ‘사이트’라 한다)와 관련한 각종 서비스(이하
+                                        ‘서비스’라 한다)를 이용함에 있어 회사와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.
+                                    <li>
+                                        <h4>제2조 (정의)</h4>
+                                        <ul class="depth02">
+                                            <li>① '이용자'란 회사의 '사이트'에 접속하여 이 약관에 따라 사이트가 제공하는 서비스를 받는 회원 및 비회원을 말합니다.</li>
+                                            <li>② '회원'이란 회사의 사이트가 정한 가입양식에 따라 개인정보를 제공하여 회원등록을 한 자로서, 회사의 정보를 지속적으로
+                                                제공받으며, 사이트가 제공하는 서비스를 계속적으로 이용할 수 있는 자를 말합니다.
+                                            </li>
+                                            <li>③ '비회원'이란 회원에 가입하지 않고 회사가 제공하는 서비스를 이용하는 자를 말합니다.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제3조 (약관의 명시와 개정)</h4>
+                                        <ul class="depth02">
+                                            <li>① 본 약관은 회사의 인터넷 서비스 화면에 게시함으로 효력이 발생합니다.</li>
+                                            <li>② 회사에서 운영하는 서비스는 이 약관의 내용과 상호, 영업소 소재지, 대표자의 성명, 사업자등록번호, 연락처(전화, 팩스,
+                                                전자우편 주소 등) 등을 이용자가 알 수 있도록 사이트의 초기 서비스화면(전면)에 게시합니다.
+                                            </li>
+                                            <li>③ 사이트는 약관의 규제 등에 관한 법률, 전자거래기본법, 전자서명법, 정보통신망 이용촉진 등에 관한 법률, 방문판매 등에 관한
+                                                법률, 소비자보호법 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.
+                                            </li>
+                                            <li>④ 사이트가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 서비스 초기화면에 그 적용일자 7일 이전부터
+                                                적용일자 전일까지 공지합니다.
+                                            </li>
+                                            <li>⑤ 사이트가 약관을 개정할 경우에는 적용일자 이후에 체결되는 계약에만 적용되고 그 이전에 이미 체결된 계약에 대해서는 개정 전의
+                                                약관조항이 그대로 적용됩니다. 다만 이미 계약을 체결한 이용자가 개정약관 조항의 적용을 받기를 원하는 뜻을 제 3항에 의한
+                                                개정약관의 공지 기간 내에 회사에 송신하여 사이트의 동의를 받은 경우에는 개정약관 조항이 적용됩니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제4조 (회원가입 및 이용계약체결 신청 등)</h4>
+                                        <ul class="depth02">
+                                            <li>① 이용자는 회사가 정한 가입 양식에 따라 회원정보를 기입한 후 이 약관에 동의한다는 의사표시를 함으로서 회원가입을
+                                                신청합니다.
+                                            </li>
+                                            <li>
+                                                ② 회사는 서비스 이용계약체결 신청이 다음 각 호에 해당하는 경우에는 그 신청에 대하여 승낙 제한사유가 해소될 때까지 승낙을
+                                                유보할 수 있습니다.
+                                                <ul class="depth03">
+                                                    <li>1. 가입신청자가 이 약관 제5조에 의하여 이전에 회원자격을 상실한 적이 있는 경우, 다만 회원자격 상실 후 회사의
+                                                        회원재가입 승낙을 얻은 경우에는 예외로 한다.
+                                                    </li>
+                                                    <li>2. 등록 내용에 허위, 기재누락, 오류가 있는 경우</li>
+                                                    <li>3. 기타 회원으로 등록하는 것이 회사의 기술상 현저히 지장이 있다고 판단되는 경우</li>
+                                                </ul>
+                                            </li>
+                                            <li>③ 회원가입 및 이용계약 체결의 성립 시기는 회사의 승낙이 회원에게 도달한 시점으로 합니다.</li>
+                                            <li>④ 회원은 제1항의 회원정보 기대 내용에 변경이 발생한 경우, 즉시 변경사항을 정정하여 기재하여야 합니다.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제5조 (회원 탈퇴 및 자격 상실 등)</h4>
+                                        <ul class="depth02">
+                                            <li>① 회원은 회사에 언제든지 탈퇴를 요청할 수 있으며 회사는 요청을 받은 즉시 해당 이용자의 회원탈퇴를 처리합니다.</li>
+                                            <li>
+                                                ② 회원이 다음 각 호의 사유에 해당하는 경우, 회사는 회원자격을 제한 및 정지시킬 수 있습니다.
+                                                <ul class="depth03">
+                                                    <li>1. 가입 신청 시에 허위 내용을 등록한 경우</li>
+                                                    <li>2. 다른 사람의 서비스 이용을 방해하거나 그 정보를 도용하는 등 전자거래질서를 위협하는 경우</li>
+                                                    <li>3. 서비스를 이용하여 법령과 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우</li>
+                                                </ul>
+                                            </li>
+                                            <li>③ 회사가 회원 자격을 제한·정지 시킨 후, 동일한 행위가 2회 이상 반복되거나 30일 이내에 그 사유가 시정되지 아니하는 경우,
+                                                회사는 회원자격을 상실시킬 수 있습니다.
+                                            </li>
+                                            <li>④ 회사가 회원자격을 상실시키는 경우에는 회원등록을 말소합니다. 이 경우 회원에게 이를 통지하고, 회원등록 말소 전에 소명할
+                                                기회를 부여합니다.
+                                            </li>
+                                            <li>⑤ 회사는 본 서비스를 이용하는 회원에 대하여 서비스 이용내용, 시간 및 회수 등에 따라 등급별로 세분하여 서비스 이용에 차등을
+                                                둘 수 있습니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제5조의 1 (회원 승낙의 취소)</h4>
+                                        <ul class="depth02">
+                                            <li>
+                                                ① 회사는 다음 항목에 해당하는 이용신청에 대해서는 발견되는 즉시 승낙을 취소할 수 있습니다.
+                                                <ul class="depth03">
+                                                    <li>1. 다른 사람의 명의를 사용하여 신청하였을 경우</li>
+                                                    <li>2. 동일한 사용자가 중복해서 신청하였을 경우</li>
+                                                    <li>3. 이용신청 시 필수 입력 사항을 허위로 기재하였을 경우</li>
+                                                    <li>4. 타인에게 혐오감을 주는 ID로 신청하였을 경우</li>
+                                                    <li>5. 기타 회사가 정한 이용신청 요건에 맞지 않을 경우</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제6조 (회원에 대한 통지)</h4>
+                                        <ul class="depth02">
+                                            <li>① 사이트가 회원에 대한 통지를 하는 경우, 회원이 사이트에 제출한 전자우편 주소로 할 수 있습니다.</li>
+                                            <li>② 사이트는 불특정 다수 회원에 대한 통지의 경우, 1주일 이상 서비스에 게시함으로써 개별 통지에 갈음할 수 있습니다.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제7조 (개인정보의 보호 및 사용)</h4>
+                                        <ul class="depth02">
+                                            <li>① 회사는 관계법령이 정하는 바에 따라 회원 등록정보를 포함한 회원의 개인정보를 보호하기 위해 노력합니다. 회원 개인정보의 보호
+                                                및 사용에 대해서는 관련법령 및 회사의 개인정보보호정책이 적용됩니다.
+                                            </li>
+                                            <li>
+                                                ② 회사는 다음과 같은 경우에 법에서 허용하는 범위 내에서 이용자의 성명, 전자우편주소 등 이용자의 개인정보를 제 3자에게 제공할
+                                                수 있습니다.
+                                                <ul class="depth03">
+                                                    <li>1. 이용자가 서비스를 이용함에 있어 관련 법률을 위반하여 수사기관이나 기타 정부기관으로부터 정보제공을 요청받는
+                                                        경우
+                                                    </li>
+                                                    <li>2. 이용자의 법률위반, 본 서비스 약관위반을 포함하여 부정행위 확인 등의 정보보호업무를 위해 필요한 경우</li>
+                                                    <li>3. 기타 법률에 의해 요구되는 경우</li>
+                                                </ul>
+                                            </li>
+                                            <li>③ 회사의 공식사이트 이외의 웹 등에서 링크된 사이트에서는 회사의 개인정보 보호정책이 적용되지 않습니다. 또한 회사는 이용자의
+                                                귀책사유로 인해 노출된 정보에 대해서 일체의 책임을 지지 않습니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제8조 (서비스의 제공 및 변경)</h4>
+                                        <ul class="depth02">
+                                            <li>① 회사는 이용자에게 질문, 답변, 처리 등의 묻고 답하기 서비스 및 포인트 적립 및 사용과 관련된 서비스를 제공합니다.</li>
+                                            <li>② 회사는 제공서비스의 품질 또는 기술적 사양에 대한 변경 등의 경우에는 장차 체결되는 계약에 의해 제공할 서비스의 내용을 변경할
+                                                수 있습니다. 이 경우 변경되는 서비스의 내용 및 제공일자를 명시하여 현재의 서비스의 내용을 게시한 곳에 그 제공일자 이전
+                                                7일부터 공지합니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제9조 (서비스의 이용 및 중단)</h4>
+                                        <ul class="depth02">
+                                            <li>① 서비스 이용은 회사의 업무상 또는 기술상 특별한 지장이 없는 한 연중무휴, 1일 24시간 운영을 원칙으로 합니다. 단, 회사는
+                                                시스템 정기점검, 증설 및 교체를 위해 회사가 정한 날이나 시간에 서비스를 일시 중단할 수 있으며, 예정되어 있는 작업으로 인한
+                                                서비스 일시중단은 사전에 공지합니다.
+                                            </li>
+                                            <li>② 회사는 긴급한 시스템 점검, 증설 및 교체 등 부득이한 사유로 인하여 예고 없이 일시적으로 서비스를 중단할 수 있으며, 새로운
+                                                서비스로의 교체 등 회사가 적절하다고 판단하는 사유에 의하여 현재 제공되는 서비스를 완전히 중단할 수 있습니다.
+                                            </li>
+                                            <li>③ 회사는 국가비상사태, 정전, 서비스 설비의 장애 또는 서비스 이용의 폭주 등으로 정상적인 서비스 제공이 불가능할 경우,
+                                                서비스의 전부 또는 일부를 제한하거나 중지할 수 있습니다. 다만 이 경우 그 사유 및 기간 등을 회원에게 사전 또는 사후에
+                                                공지합니다.
+                                            </li>
+                                            <li>④ 회사는 자신이 통제할 수 없는 사유로 인한 서비스중단의 경우(시스템관리자의 고의, 과실 없는 디스크장애, 시스템다운 등)에
+                                                사전통지가 불가능하며 타인(PC통신회사, 기간통신사업자 등)의 고의, 과실로 인한 시스템 중단 등의 경우에는 통지하지 않습니다.
+                                            </li>
+                                            <li>⑤ 회사는 서비스를 특정범위로 분할하여 각 범위별로 이용가능시간을 별도로 지정할 수 있습니다. 다만 이 경우 그 내용을
+                                                공지합니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제10조 (사이트의 의무)</h4>
+                                        <ul class="depth02">
+                                            <li>① 사이트는 법령과 이 약관이 금지하거나 공서양속에 반하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고, 안정적으로
+                                                서비스를 제공하는 데 최선을 다하여야 합니다.
+                                            </li>
+                                            <li>② 서비스는 이용자가 안전하게 인터넷 서비스를 이용할 수 있도록 이용자의 개인정보(신용정보 포함)보호를 위한 보안 시스템을
+                                                갖추어야 합니다.
+                                            </li>
+                                            <li>③ 사이트는 이용자가 원하지 않는 경우, 영리목적의 광고성 전자우편을 발송하지 않습니다.</li>
+                                            <li>
+                                                ④ 이용자가 사이트를 통해 공개한 글이 다음 사항에 해당하는 경우 사이트는 이를 게시한 본인의 동의 없이 관련된 내용을 삭제할
+                                                권한이 있습니다.
+                                                <ul class="depth03">
+                                                    <li>1. 특정인에 대한 비방이나, 사생활 침해, 욕설, 명예훼손, 표절, 성적 희롱 등으로 분쟁의 소지가 있는 경우
+                                                    </li>
+                                                    <li>2. 소송 당사자가 삭제를 요청한 글, 타인의 ID나 주민등록번호를 도용하여 올린 글, 익명의 아이디 사용자의
+                                                        실명을 강제로 밝힌 글
+                                                    </li>
+                                                    <li>3. 상업광고 또는 광고성 게시, 사적인 연락, 도배성 글, 유사 내용의 반복적인 게시, 기타 웹사이트 운영에
+                                                        심각한 장애를 주는 글
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제11조 (회원 ID 관리 및 의무)</h4>
+                                        <ul class="depth02">
+                                            <li>① 회원 ID와 비밀번호에 관한 모든 관리책임은 회원에게 있습니다.</li>
+                                            <li>② 회원은 자신의 ID 및 비밀번호를 제3자가 이용하게 해서는 안됩니다.</li>
+                                            <li>③ 회원이 자신의 ID 및 비밀번호를 도난당하거나 제3자가 사용하고 있음을 인지한 경우에는 바로 사이트에 통보하고 사이트의 안내가
+                                                있는 경우에는 그에 따라야 합니다.
+                                            </li>
+                                            <li>④ 사이트는 회원이 상기 제1항~제3항을 위반하여 회원에게 발생한 손해에 대하여 아무런 책임을 부담하지 않습니다.</li>
+                                            <li>⑤ 사이트는 회원 ID에 의하여 제반 이용자 관리업무를 수행 하므로 회원이 회원 ID를 변경하고자 하는 경우 사이트가 인정할 만한
+                                                사유가 없는 한 회원 ID의 변경을 제한할 수 있습니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제12조 (이용자의 권리와 의무)</h4>
+                                        <ul class="depth02">
+                                            <li>① 이용자는 본 약관 및 관계법령을 준수하여야 하며, 사이트의 업무수행에 지장을 초래하는 행위를 하여서는 안됩니다.</li>
+                                            <li>② 이용자는 서비스를 이용하여 얻은 정보를 사이트의 승낙 없이 복사, 복제, 개조, 번역하여 타인에게 제공하여서는 안됩니다.
+                                            </li>
+                                            <li>③ 이용자는 사이트에서 승낙한 경우를 제외하고는 서비스를 이용하여 영업활동을 할 수 없으며, 그 결과에 대해 사이트는 책임을 지지
+                                                않습니다. 또한 이와 같은 영업활동으로 사이트가 손해를 입은 경우, 이용자는 사이트에 대해 손해배상의무를 지며, 사이트는 해당
+                                                이용자에 대해 서비스 이용제한 및 적법한 절차를 거쳐 손해배상 등을 청구할 수 있습니다.
+                                            </li>
+                                            <li>
+                                                ④ 이용자는 다음과 같은 행위를 하여서는 안됩니다.
+                                                <ul class="depth03">
+                                                    <li>1. 신청 또는 변경 시 허위내용의 등록</li>
+                                                    <li>2. 사이트에 게시된 정보의 변경</li>
+                                                    <li>3. 사이트가 정한 정보 이외의 정보(컴퓨터 프로그램 등)의 송신 또는 게시</li>
+                                                    <li>4. 사이트 기타 제3자의 저작권 등 지적재산권에 대한 침해</li>
+                                                    <li>5. 사이트 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위</li>
+                                                    <li>6. 수신자의 의사에 반하여 광고성 내용을 지속적으로 전송하거나 안정적 운영에 지장을 초래하는 다량의 자료 송수신,
+                                                        게시물 등록
+                                                    </li>
+                                                    <li>7. 외설 또는 폭력적인 메시지·화상·음성 기타 공서양속에 반하는 정보를 사이트에 공개 또는 게시하는 행위</li>
+                                                </ul>
+                                            </li>
+                                            <li>⑤ 이용자가 사이트에 게시한 모든 글의 내용에 대해서는 이용자 본인에게 법적인 책임이 있으며, 사이트는 이에 관련하여 아무 책임을
+                                                지지 않습니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제13조 (저작권의 귀속 및 이용제한)</h4>
+                                        <ul class="depth02">
+                                            <li>① 사이트가 작성한 저작물에 대한 저작권 기타 지적재산권은 회사에 귀속합니다.</li>
+                                            <li>② 이용자가 등록한 게시물에 대한 저작권은 해당 저작권자에게 귀속합니다. 사이트는 게시자의 동의 없이 게시물을 상업적으로 이용할
+                                                수 없습니다. 단, 비영리 목적인 경우는 허용하며 서비스 내의 게재권을 갖습니다.
+                                            </li>
+                                            <li>③ 이용자는 사이트의 서비스를 이용함으로써 얻은 정보를 회사의 사전 승낙 없이 복제, 송신, 출판, 배포, 방송 기타 방법에
+                                                의하여 영리목적으로 이용하거나 제3자에게 이용하게 하여서는 안됩니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제14조 (포인트 제도의 운영)</h4>
+                                        <ul class="depth02">
+                                            <li>① 포인트는 회사에서 정한 정책에 따라 서비스 이용 시 가감되는 일종의 점수로서 회사는 회원이 서비스를 효율적 이용하게 할 수
+                                                있도록 포인트 제도를 운영할 수 있습니다.
+                                            </li>
+                                            <li>② 회사의 포인트 정책은 회사의 사정에 따라 사전 고지 없이 변경될 수 있습니다.</li>
+                                            <li>③ 회사는 회원에게 지급된 포인트에 따라 이를 보상할 수 있으며, 본 경우 소득세법에 의거 일정비율의 세금을 공제하거나, 관리에
+                                                따르는 비용을 보전하기 위한 수수료를 부과할 수 있습니다.
+                                            </li>
+                                            <li>④ 회원이 포인트를 위법 부당한 방법 또는 회사의 포인트 정책상의 기준 이외의 방법으로 취득한 경우 회사는 임의로 포인트를 삭제할
+                                                수 있으며 그와 관련해 불량이용자처리규정에 따라 회원의 탈퇴 조치를 포함하여 이용제한 등의 제반조치를 취할 수 있습니다.
+                                            </li>
+                                            <li>⑤ 회원은 회사의 동의 없이 포인트를 제3자에게 양도, 증여할 수 없습니다.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제15조 (분쟁해결)</h4>
+                                        <ul class="depth02">
+                                            <li>① 사이트는 이용자로부터 제출되는 불만사항 및 의견은 우선적으로 그 사항을 처리합니다. 다만, 신속한 처리가 곤란한 경우에는
+                                                이용자에게 그 사유와 처리일정을 즉시 통보해 드립니다.
+                                            </li>
+                                            <li>② 사이트와 이용자 간에 발생한 분쟁은 전자거래기본법 제28조 및 동 시행령 제15조에 의하여 설치된 전자거래분쟁조정위원회의
+                                                조정에 따를 수 있습니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>제16조 (재판권 및 준거법)</h4>
+                                        <ul class="depth02">
+                                            <li>① 사이트와 이용자 간에 발생한 전자거래 분쟁에 관한 소송은 민사소송법상의 관할법원에 제기합니다.</li>
+                                            <li>② 사이트와 이용자 간에 제기된 전자거래 소송에는 한국법을 적용합니다.</li>
+                                            <li>
+                                                ③ 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 전자거래 소비자 보호지침 및 관계법령 또는 상관례에
+                                                따릅니다.<br/>
+                                                서비스 이용으로 발생한 분쟁에 대해 소송이 제기되는 경우, 회사의 본사 소재지를 관할하는 법원을 관할 법원으로 합니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="pt25">
+                                    (부칙)<br/>
+                                    제 1조(시행일) 본 약관은 2015년 11월 5일부터 시행합니다.
+                                </div>
+                            </div>
+                            <div class="agree_area">
+                                <p class="fLeft">위 이용 약관에 동의합니다.</p>
+                                <div class="agree_form">
+                                    <input type="radio" id="agr_y" name="agr" value="Y" onclick="agreeAllCheck(this.form)"/> <label for="agr_y">예</label>
+                                    <input type="radio" id="agr_n" name="agr" value="N" onclick="agreeAllCheck(this.form)" /> <label for="agr_n">아니오 </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>개인정보취급방침</h3>
+                        <div>
+                            <div class="join_cnt privacy_cnt">
+                                <h4>총칙</h4>
+                                <div>
+                                    <p>
+                                        케이아이포씨(Ki4C )(이하 ‘회사’)는 고객님들의 개인정보를 중요시하며, "정보통신망이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.
+                                        회사는 개인정보취급방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가
+                                        취해지고 있는지 알려드립니다.
+                                        회사는 개인정보취급방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.
+                                    </p>
+                                    <p>&gt; 본 방침은 : 2015년 11월 5일부터 시행됩니다.</p>
+                                </div>
+
+                                <ul class="depth01">
+                                    <li>
+                                        <h5>1. 수집하는 개인정보 항목</h5>
+                                        <p>회사는 회원가입, 상담, 서비스 신청 등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.</p>
+                                        <ul class="depth02">
+                                            <li>
+                                                (1) 필수 수집 정보
+                                                <ul class="depth03">
+                                                    <li>- 성명, 성별, 생년월일, 로그인 ID, 비밀번호 : 서비스 이용에 따른 민원사항의 처리를 위한 본인식별,
+                                                        중복확인, 연령별 서비스의 제공, 부정비용방지 등을 위하여 사용됩니다.
+                                                    </li>
+                                                    <li>- 전화번호, 휴대폰 번호, 주소, 이메일 주소 : 공지사항, 불만처리 등 의사소통 경로의 확보, 새로운 서비스나
+                                                        도서, 이벤트 정보 등 최신 정보안내, 물품배송 시 정확한 배송지의 확보 등을 위하여 사용됩니다.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                (2) 부가서비스 이용 시 수집 정보
+                                                <ul class="depth03">
+                                                    <li>- 직업, 가입경로, 책 구매장소, 관심분야 : 이용자의 독서 성향과 특성을 이해하여 최적의 개인 맞춤서비스 제공
+                                                        및 통계학적 분석을 위하여 사용됩니다.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                (3) 개인정보 수집방법
+                                                <ul class="depth03">
+                                                    <li>- 홈페이지 (회원가입)</li>
+                                                </ul>
+                                            </li>
+                                            <li>(4) 본인확인을 위해 주민번호 유효성 검사와 중복 검사를 거치며, 본 정보는 관계법령에 의하여 보호되며, 탈퇴시 폐기됩니다.
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <h5>2. 개인정보의 수집 및 이용목적</h5>
+                                        <p>회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+                                        <ul class="depth02">
+                                            <li>(1) 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 포인트 정산 : 콘텐츠 제공 , 물품배송 또는 청구서 등 발송,
+                                                본인인증, 구매 및 포인트 결제 등
+                                            </li>
+                                            <li>(2) 회원 관리 : 회원제 서비스 이용에 따른 본인확인, 개인 식별, 가입 의사 확인, 불량회원((주)엘케이랩 이용약관 제5조
+                                                2항 위반사유로 회원자격 상실된 회원 및 제5조의 1 제1항에 따라 승낙이 취소된 회원)의 부정 이용방지와 비인가 사용 방지,
+                                                불만처리 등 민원처리, 고지사항 전달
+                                            </li>
+                                            <li>(3) 신규 서비스(도서) 개발 및 마케팅 활용 : 이벤트 등 광고성 정보 전달, 접속 빈도 파악 또는 회원의 서비스 이용에 대한
+                                                통계
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <h5>3. 개인정보의 보유 및 이용기간</h5>
+                                        <p>원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로
+                                            명시한 기간 동안 보존합니다.</p>
+                                        <ul class="depth02">
+                                            <li>보존 항목 : 로그인ID</li>
+                                            <li class="mb10">보존 근거 : 중복 ID 금지, 회원탈퇴사유 확인<br></li>
+                                            <li>보존 항목 : 서비스 이용기록</li>
+                                            <li class="mb10">보존 근거 : 게시판 작성 글 확인용도, 포인트 적립 및 사용 확인</li>
+                                            <li>보존 항목 : 접속 로그</li>
+                                            <li class="mb10">보존 근거 : 시기별 접속통계 확인</li>
+                                            <li>보존 기간 : 사이트 폐쇄 시까지</li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <h5>4. 개인정보 제공 안내</h5>
+                                        <ul class="depth02">
+                                            <li>
+                                                (1) 회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
+                                                <ul class="depth03">
+                                                    <li>- 이용자들이 사전에 동의한 경우</li>
+                                                    <li>- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                (2) 회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.
+                                                <ul class="depth03">
+                                                    <li>- 제공 정보의 보유 및 이용 기간 : 탈퇴 시 자동 파기</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <h5>5. 이용자의 개인정보 관리에 관한 사항</h5>
+                                        <p>회원은 언제든지 본 사이트에 등록되어 있는 자신의 개인정보를 열람하실 수 있으며 보관된 필수 정보를 수정하실 수 있습니다. 또한 회원 가입
+                                            시 요구된 필수 정보 외의 추가 정보는 언제나 열람, 수정, 삭제할 수 있습니다. 회원님의 개인정보 변경 및 삭제와 회원탈퇴는 본
+                                            사이트에서 로그인(Login) 후 이용하실 수 있습니다.</p>
+                                    </li>
+
+                                    <li>
+                                        <h5>6. 쿠키(cookie)의 운영에 관한 사항</h5>
+                                        <p>
+                                            회사는 회원인증 및 로그인을 위한 ID 저장 체크박스를 제외하고는 쿠키(Cookie) 등 인터넷 서비스 이용 시 자동 생성되는 개인정보를
+                                            수집하는 장치를 운영하지 않습니다.
+                                            이는 로그아웃(Logout)시 자동으로 컴퓨터에 저장되지 않고 삭제되도록 되어 있으므로 공공장소나 타인이 사용할 수 있는 컴퓨터를 사용
+                                            하 실 경우에는 로그인(Login)후 서비스 이용이 끝나시면 반드시 로그아웃(Logout)해 주시기 바랍니다.
+                                        </p>
+                                    </li>
+
+                                    <li>
+                                        <h5>7. 개인정보에 관한 민원 서비스</h5>
+                                        <p>회사는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고
+                                            있습니다.</p>
+                                        <p>
+                                            고객서비스 담당 부서 : 이지연<br>
+                                            전화번호 : (02)325-1722<br>
+                                            E-Mail : easy@easyspub.co.kr<br>
+                                        </p>
+                                        <p>
+                                            개인정보관리책임자 성명 : 이지연<br>
+                                            전화번호 : (02)325-1722<br>
+                                            E-Mail : easy@easyspub.co.kr<br>
+                                        </p>
+                                        <p>귀하께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보관리책임자 혹은 관리담당자에게 신고하실 수 있습니다.
+                                            회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.</p>
+                                        <ul class="depth02">
+                                            <li>
+                                                <p>기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.</p>
+                                                <ul class="depth03">
+                                                    <ll>
+                                                        1. 개인분쟁조정위원회 (www.1336.or.kr/)
+                                                        <li>2. 정보보호마크인증위원회 (www.eprivacy.or.kr / 02-580-0533~4)</li>
+                                                        <li>3. 대검찰청 첨단범죄수사과
+                                                            (http://www.spo.go.kr/kor/depart/icic/main.jsp /
+                                                            02-3480-2000)
+                                                        </li>
+                                                        <li>4. 경찰청 사이버테러대응센터 (www.netan.go.kr/ / 02-392-0330)</li>
+                                                    </ll>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+                            <div class="agree_area">
+                                <p class="fLeft">위 개인정보취급방침에 동의합니다.</p>
+                                <div class="agree_form">
+                                    <input type="radio" id="prv_y" name="prv" value="Y" onclick="agreeAllCheck(this.form)"/> <label for="prv_y">예</label>
+                                    <input type="radio" id="prv_n" name="prv" value="N" onclick="agreeAllCheck(this.form)" /> <label for="prv_n">아니오 </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agree_all">
+                        <label for="agreeAll">전체 약관에 동의합니다.</label>
+                        <input type="checkbox" id="agreeAll" name="agreeAll" class="agreeAll" onclick="agreeCheck(this.form)" value="Y">
+                    </div>
+                </div>
+                <div class="btn_area btm_area tCenter">
+                    @*<input type="button" name="checkButton" class="btnOK btn btnL btnBlack" disabled="disabled"
+                           value="확인" onclick="location.href='/auth/memberRegForm'">*@
+                    <input type="button" name="checkButton" class="btnOK btn btnL btnBlack" disabled="disabled"
+                            value="확인" onclick="location.href='/member/memberReg'">
+                    <a href="/" class="btn btnL btnGray">취소</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+        function agreeAllCheck(frm) {
+            var agr = document.querySelector('input[name="agr"]:checked').value;
+            var prv = document.querySelector('input[name="prv"]:checked').value;
+            const agreeAll = document.getElementById("agreeAll");
+            if (agr == "Y" && prv == "Y"){
+                frm.checkButton.disabled = false
+                document.querySelector('input:checkbox[name="agreeAll"]:checked').prop("checked",true);
+            }
+            else{
+                frm.checkButton.disabled = true
+                document.querySelector('input:checkbox[name="agreeAll"]:checked').prop("checked", false);
+            }
+        }
+        
+    $(function () {
+        $('header').load('/include/header.html')
+    });
+
+    $(function () {
+        $('footer').load('/include/footer.html')
+    });
+
+
+    //$(document).ready(function () {
+    //    //최상단 체크박스 클릭
+    //    $(".agreeAll").click(function () {
+    //        //클릭되었으면
+    //        if ($(".agreeAll").prop("checked")) {
+    //            //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
+    //            $("input[name=agr_y]").prop("checked", true);
+    //            $("input[name=prv_y]").prop("checked", true);
+
+    //            //클릭이 안되있으면
+    //        } else {
+    //            //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
+    //            $("input[name=agr_y]").prop("checked", false);
+    //            $("input[name=prv_y]").prop("checked", false);
+
+    //        }
+    //    })
+    //})
+
+</script>
+<!-- 컨텐츠 영역 : e -->
+<footer></footer>
+</body>
+</html>

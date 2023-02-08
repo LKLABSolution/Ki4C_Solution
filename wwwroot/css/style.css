@@ -1,0 +1,107 @@
+/* 기본 설정 */
+body {background: #f3e5f5;}
+#wrap {width: 1200px; margin: 0 auto;}
+header {width: 100%; height: 100px; background: #9575cd;}
+aside {
+    float: left;
+    width: 200px; height: 700px;
+    padding: 20px 10px 10px 10px;
+    background: #7e57c2;}
+section {
+    float: left;
+    width: calc( 100% - 260px );
+    height: calc( 100% - 300px );
+    padding: 20px;
+    background: #f2f2f2;
+    display: flex;
+}
+footer {clear: both; width: 100%; height: 200px; background: #5e35b1;}
+#nav_2 {
+    display: none;
+}
+
+input[id="menuicon"] {
+    display: none;
+}
+input[id="menuicon"] + label {
+    display: block;
+    width: 30px; height: 20px;
+    position: absolute;
+    right: 0;
+    top: 17px;
+    right: 30px;
+    transition: all .35s;
+    cursor: pointer;
+}
+input[id="menuicon"]:checked + label {
+    z-index: 2;
+    right: 150px;
+}
+input[id="menuicon"] + label span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 30px;
+    background: rgb(228, 224, 224);
+    transition: all .35s;
+}
+input[id="menuicon"] + label span:nth-child(1) {
+    top: 0;
+}
+input[id="menuicon"] + label span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%)
+}
+input[id="menuicon"] + label span:nth-child(3) {
+    bottom: 0;
+}
+input[id="menuicon"]:checked + label span:nth-child(1) {
+    top: 50%;
+    transform:translateY(-50%) rotate(45deg);
+}
+input[id="menuicon"]:checked + label span:nth-child(2) {
+    opacity: 0;
+}
+input[id="menuicon"]:checked + label span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+div[class="sidebar"] {
+    width: 150px;
+    height: 300px;
+    background: rgb(228, 224, 224);
+    position: fixed;
+    top: 10px;
+    right: -150px;
+    z-index: 1;
+    transition: all .35s;
+}
+input[id="menuicon"]:checked + label + div {
+    right:0;
+}
+
+/* 기본 서식 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    color: white;
+}
+
+/* 화면 너비 0 ~ 768px */
+@media (max-width: 768px){
+    #wrap {width: 100%;}
+    header {height: 40px;}
+    aside {display: none;}
+    section {width: 90%;}
+    #nav_1 {
+        display: none;
+    }
+    #nav_2 {
+        display: block;
+    }
+}

@@ -1,0 +1,243 @@
+﻿@{
+    // Used Table [Member]
+    // 회원관리 - 가입
+    
+    ViewData["Title"] = "MemberReg Page";
+}
+@*<link rel="stylesheet" href="~/css/Common/Member/MemberReg.css" />*@
+<!-- 섹션 -->
+@*<section>
+    <!-- 콘텐츠 -->
+    <div id="wrap" style="border:1px solid red;">
+        <h2>회원가입</h2>
+        <div style="float: right;">
+            <a href="#">Home</a>
+            &gt;
+            회원가입
+        </div>
+        <br>
+        <hr />
+        <!-- 회원가입 -->
+        <div class="contents" style="display: flex; justify-content: center;">
+            <div style="width: 80%;">
+                <br>
+                <h1>계정 만들기</h1>
+                <a style="font-size: 12px;">Ki4C의 다양한 솔루션을 하나의 통합 계정으로 간편하게 사용할 수 있습니다.</a> <br> <br>
+                <a style="font-size: 14px;">아이디 </a> <a style="color: red;">*</a> <br>
+                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
+                    <input id="input-form" type="text" placeholder="아이디" />
+                </form> <br>
+                <a style="font-size: 14px;">이메일 </a> <a style="color: red;">*</a> <br>
+                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
+                    <input id="input-form" type="text" placeholder="이메일 주소는 아이디로 사용됩니다." />
+                </form> <br>
+                <a style="font-size: 14px;">비밀번호 </a> <a style="color: red;">*</a> <br>
+                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
+                    <input id="input-form" type="text" placeholder="영문+숫자+특수기호 포함 8~12자리" />
+                </form> <br>
+                <a style="font-size: 14px;">비밀번호 확인 </a> <a style="color: red;">*</a> <br>
+                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
+                    <input id="input-form" type="text" />
+                </form> <br>
+                <a style="font-size: 14px;">이름 </a> <a style="color: red;">*</a> <br>
+                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
+                    <input id="input-form" type="text" />
+                </form> <br>
+                <a style="font-size: 14px;">휴대전화번호 </a> <a style="color: red;">*</a> <br>
+                <form style="padding-top: 5px; display: inline-block;">
+                    <input id="input-form" type="text" placeholder="대한민국(+82)" />
+                </form> <br>
+                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
+                    <input id="input-form" type="text" placeholder="번호를 입력해주세요." />
+                </form> <br>
+                <a style="font-size: 14px;">회사명 </a> <a style="color: red;">*</a> <br>
+                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
+                    <input id="input-form" type="text" />
+                </form> <br>
+                <a style="font-size: 14px;">부서명</a> <br>
+                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
+                    <input id="input-form" type="text" />
+                </form> <br>
+                <div id="check_area">
+                    <input type="checkbox" name="check1">
+                    <label for="check1">전체 동의</label>
+                </div>
+                <hr align="left" ; id="line-form" />
+                <div id="check_area">
+                    <input type="checkbox" name="check2">
+                    <label for="check2">개인정보 수집 및 이용 동의(필수)</label>
+                </div>
+                <hr align="left" ; id="line-form" />
+                <div id="check_area">
+                    <input type="checkbox" name="check3">
+                    <label for="check3">개인정보 취급위탁 동의(필수)</label>
+                </div>
+                <hr align="left" ; id="line-form" />
+                <div id="check_area">
+                    <input type="checkbox" name="check4">
+                    <label for="check4">개인정보 국외이전 동의(필수)</label>
+                </div>
+                <hr align="left" ; id="line-form" />
+                <div id="check_area">
+                    <input type="checkbox" name="check5">
+                    <label for="check5">개인정보 공유 및 제공(제3자) 동의(필수)</label>
+                </div>
+                <hr align="left" ; id="line-form" />
+                <div id="check_area">
+                    <input type="checkbox" name="check6">
+                    <label for="check6">서비스 이용약관(필수)</label>
+                </div>
+                <hr align="left" ; id="line-form" />
+                <div id="check_area">
+                    <input type="checkbox" name="check7">
+                    <label for="check7">만 16세 이상 서비스 이용 동의(필수)</label>
+                </div>
+                <hr align="left" ; id="line-form" />
+                <div id="check_area">
+                    <input type="checkbox" name="check8">
+                    <label for="check8">마케팅 수신동의(선택)</label>
+                </div> <br> <br>
+                <div style="padding-left: 50px;">
+                    <input id="cancle-button" type="submit" value="취소" />
+                    <input id="next-button" type="submit" value="다음" />
+                </div>
+            </div>
+        </div>
+        <br> <br> <br>
+        <!-- 회원가입 -->
+    </div>
+    <!-- 콘텐츠 -->
+</section>*@
+
+<section>
+    <div id="wrap" class="border border-danger">
+        <h2 class="text-center">회원가입</h2>
+        <div class="d-flex justify-content-end">
+            <a href="#">Home</a> &gt; 회원가입
+        </div>
+        <hr>
+        <div class="d-flex justify-content-center">
+            <div class="w-80">
+                <br>
+                <h1 class="text-center">계정 만들기</h1>
+                <p class="text-center font-size-sm">Ki4C의 다양한 솔루션을 하나의 통합 계정으로 간편하게 사용할 수 있습니다.</p>
+                <br><br>
+                <form>
+                <div class="form-group">
+                    <label for="input-form" class="font-size-14">아이디 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-form" placeholder="아이디">
+                </div>
+                <div class="form-group">
+                    <label for="input-form" class="font-size-14">이메일 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-form" placeholder="이메일 주소는 아이디로 사용됩니다.">
+                </div>
+                <div class="form-group">
+                    <label for="input-form" class="font-size-14">비밀번호 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-form" placeholder="영문+숫자+특수기호 포함 8~12자리">
+                </div>
+                <div class="form-gruop">
+                    <label for="input-form" class="font-size-14">비밀번호 확인 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-form" placeholder="비밀번호를 한번 더 입력해주세요.">
+                </div>
+                <div class="form-gruop">
+                    <label for="input-form" class="font-size-14">이름 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-form" placeholder="이름을 입력해주세요.">
+                </div>
+                <div class="form-gruop">
+                    <label for="input-form" class="font-size-14">휴대폰 번호 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-form" placeholder="휴대폰 번호를 입력해주세요.">
+                </div>
+                <div class="form-gruop">
+                    <label for="input-form" class="font-size-14">생년월일 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-form" placeholder="생년월일을 입력해주세요.">
+                </div>
+                <div class="form-gruop">
+                    <label for="input-form" class="font-size-14">성별 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-form" placeholder="성별을 입력해주세요.">
+                </div>
+                <!-- 개인정보 동의 Chack box -->
+                <div class="form-check">
+                        <label for="check1" class="form-check-label font-size-14">전체 동의 <span class="text-danger">*</span></label>
+                        <input type="checkbox" class="form-check-input" id="check1" onchange="MemberRegJS.check1Clicked();" >
+                </div>
+                <div class="form-check">
+                    <label for="check2" class="form-check-label font-size-14">개인정보 수집 및 이용 동의(필수) <span class="text-danger">*</span></label>
+                    <input type="checkbox" class="form-check-input" id="check2" onchange="MemberRegJS.checkOrderClick();" placeholder="">
+                </div>
+                <div class="form-check">
+                    <label for="check3" class="form-check-label font-size-14">개인정보 취급위탁 동의(필수) <span class="text-danger">*</span></label>
+                    <input type="checkbox" class="form-check-input" id="check3" onchange="MemberRegJS.checkOrderClick();" placeholder="">
+                </div>
+                <div class="form-check">
+                    <label for="check4" class="form-check-label font-size-14">개인정보 국외이전 동의(필수) <span class="text-danger">*</span></label>
+                    <input type="checkbox" class="form-check-input" id="check4" onchange="MemberRegJS.checkOrderClick();" placeholder="">
+                </div>
+
+                <div class="form-check">
+                    <label for="check5" class="form-check-label font-size-14">개인정보 공유 및 제공(제3자) 동의(필수) <span class="text-danger">*</span></label>
+                    <input type="checkbox" class="form-check-input" id="check5" onchange="MemberRegJS.checkOrderClick();" placeholder="">
+                </div>
+
+                <div class="form-check">
+                    <label for="check6" class="form-check-label font-size-14">서비스 이용약관(필수) <span class="text-danger">*</span></label>
+                    <input type="checkbox" class="form-check-input" id="check6" onchange="MemberRegJS.checkOrderClick();" placeholder="">
+                </div>
+                <div class="form-check">
+                    <label for="check7" class="form-check-label font-size-14">만 16세 이상 서비스 이용 동의(필수) <span class="text-danger">*</span></label>
+                    <input type="checkbox" class="form-check-input" id="check7" onchange="MemberRegJS.checkOrderClick();" placeholder="">
+                </div>
+                <div class="form-check">
+                    <label for="check8" class="form-check-label font-size-14">마케팅 수신동의(선택) <span class="text-danger">*</span></label>
+                    <input type="checkbox" class="form-check-input" id="check8" onchange="MemberRegJS.checkOrderClick();" placeholder="">
+                </div>
+                </form>
+                <!-- cencel and submit button -->
+                <div class="form-gruop">
+                    <button type="button" class="btn btn-secondary">취소</button>
+                    <button type="submit" class="btn btn-primary">등록</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    let MemberRegJS = {
+        check1Clicked : function(){
+            if($('#check1').is(':checked')){
+                $('#check2').prop('checked', true);
+                $('#check3').prop('checked', true);
+                $('#check4').prop('checked', true);
+                $('#check5').prop('checked', true);
+                $('#check6').prop('checked', true);
+                $('#check7').prop('checked', true);
+                $('#check8').prop('checked', true);
+            }else{
+                $('#check2').prop('checked', false);
+                $('#check3').prop('checked', false);
+                $('#check4').prop('checked', false);
+                $('#check5').prop('checked', false);
+                $('#check6').prop('checked', false);
+                $('#check7').prop('checked', false);
+                $('#check8').prop('checked', false);
+            }
+        },
+        checkOrderClick : function(){
+            //this function is check 2~7 checkbox onclick event
+            // check1 is checked, if all checkbox is checked
+            if($('#check2').is(':checked') && $('#check3').is(':checked') && $('#check4').is(':checked') && $('#check5').is(':checked') && $('#check6').is(':checked') && $('#check7').is(':checked')){
+                $('#check1').prop('checked', true);
+            }else{
+                $('#check1').prop('checked', false);
+            }
+        },
+        inputNullCheckFunction : 
+    }
+</script>
+
+
+
+                
+                
+                
+                

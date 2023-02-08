@@ -1,0 +1,137 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LKLabHome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <!-- css -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/resources/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="/resources/css/jcarousel.css" rel="stylesheet"/>
+    <link href="/resources/css/flexslider.css" rel="stylesheet"/>
+    <link href="/resources/css/style.css" rel="stylesheet"/>
+
+    <!-- Theme skin -->
+    <link href="/resources/skins/default.css" rel="stylesheet"/>
+
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.js"></script>
+    <script src="/resources/js/jquery.easing.1.3.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/jquery.fancybox.pack.js"></script>
+    <script src="/resources/js/jquery.fancybox-media.js"></script>
+    <script src="/resources/js/google-code-prettify/prettify.js"></script>
+    <script src="/resources/js/portfolio/jquery.quicksand.js"></script>
+    <script src="/resources/js/portfolio/setting.js"></script>
+    <script src="/resources/js/jquery.flexslider.js"></script>
+    <script src="/resources/js/animate.js"></script>
+    <script src="/resources/js/custom.js"></script>
+
+    <!-- =======================================================
+    Theme Name: 
+    Theme URL: 
+    Author:  김 대 경
+    Author URL: 
+    ======================================================= -->
+    <link href="~/css/mobile.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <!-- start header -->
+        <header>
+            <!-- include -->
+        </header>
+        <!-- end header -->
+        <!-- start lnb -->
+        <aside class="lnb">
+
+
+        </aside>
+        <section class="content">
+            <div class="container">
+                @*function agreeCheck(frm)
+                {
+                if (frm.checkButton.disabled==true)
+                frm.checkButton.disabled=false
+                else
+                frm.checkButton.disabled=true
+                }*@
+
+
+                <form name="form">
+                    약관 1 <br>
+                    <input type="radio" name="agree1" /> <span class="up">동의</span>&nbsp;&nbsp;
+                    <input type="radio" name="agree4" /> <span class="up">취소</span>
+                    <br>약관 2 <br>
+                    <input type="radio" name="agree2" /> <span class="up">동의</span>&nbsp;&nbsp;
+                    <input type="radio" name="agree5" /> <span class="up">취소</span>
+                    <br>약관 3 <br>
+                    <input type="radio" name="agree6" /> <span class="up">취소</span>
+                    <input type="radio" name="agree3" /> <span class="up">동의</span>&nbsp;&nbsp;
+                    <br>
+                    <input type="checkbox" name="agreeAll" class="agreeAll" onclick="agreeCheck(this.form)">전체선택
+                    <br>
+                    <input type="button" name="checkButton" value=" 확 인 " disabled
+                           onclick="location.href='/auth/memberRegForm'">
+                    <input type="button" name="reset" value=" 취 소 ">
+                </form>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+
+                <script type="text/javascript">
+
+
+                    $(function () {
+                        $('header').load('/include/header.html')
+                    });
+
+                    $(function () {
+                        $('footer').load('/include/footer.html')
+                    });
+                     $(document).ready(function() {
+                        $('agreeAll').click(function() {
+                            $('agree').prop('checked', this.checked);
+                        });
+                    });
+                    $(document).ready(function () {
+                        //최상단 체크박스 클릭
+                        $(".agreeAll").click(function () {
+                            //클릭되었으면
+                            if ($(".agreeAll").prop("checked")) {
+                                //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
+                                $("input[name=agree1]").prop("checked", true);
+                                $("input[name=agree2]").prop("checked", true);
+                                $("input[name=agree3]").prop("checked", true);
+                                //클릭이 안되있으면
+                            } else {
+                                //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
+                                $("input[name=agree1]").prop("checked", false);
+                                $("input[name=agree2]").prop("checked", false);
+                                $("input[name=agree3]").prop("checked", false);
+                            }
+                        })
+                    })
+
+                </script>
+
+            </div>
+
+        </section>
+        <hr class="m-divider">
+        <footer>
+            <!-- include -->
+        </footer>
+    </div>
+    <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+
+
+</body>
+
+</html>

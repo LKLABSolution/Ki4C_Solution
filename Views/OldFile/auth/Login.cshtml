@@ -1,0 +1,208 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LKLabHome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <!-- css -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/resources/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="/resources/css/jcarousel.css" rel="stylesheet" />
+    <link href="/resources/css/flexslider.css" rel="stylesheet" />
+    <link href="/resources/css/style.css" rel="stylesheet" />
+
+    <!-- Theme skin -->
+    <link href="/resources/skins/default.css" rel="stylesheet" />
+    <link href="~/css/common.css" rel="stylesheet" />
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.js"></script>
+    <script src="/resources/js/jquery.easing.1.3.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/jquery.fancybox.pack.js"></script>
+    <script src="/resources/js/jquery.fancybox-media.js"></script>
+    <script src="/resources/js/google-code-prettify/prettify.js"></script>
+    <script src="/resources/js/portfolio/jquery.quicksand.js"></script>
+    <script src="/resources/js/portfolio/setting.js"></script>
+    <script src="/resources/js/jquery.flexslider.js"></script>
+    <script src="/resources/js/animate.js"></script>
+    <script src="/resources/js/custom.js"></script>
+</head>
+<body>
+    <!-- 컨텐츠 영역 : s -->
+    <div id="contents_wrap">
+        <header>
+        </header>
+        <!--  <div class="menu_loacation">
+             <div class="container">
+                 <a href="/Main/PUB" class="home" title="메인페이지로 이동"></a>
+                 <span class="depth"><b>로그인</b></span>
+             </div>
+         </div> -->
+
+        <div class="contents">
+            <div class="container login" id="login_wrap">
+                <h2>로그인</h2>
+
+                <div class="txt_cmnt">
+                    <h3>LOGIN</h3>
+                    <p>로그인을 하시면 더욱 편리하게 이용하실 수 있습니다.</p>
+                </div>
+
+                <div class="login_box">
+                    <div class="login_area">
+                        <!-- <form method="post" id="frmLogin" name="frmLogin" action="/81_Menu/LoginOK/PUB" onSubmit="return true;"> -->
+                        <input type="hidden" id="fm_url" name="fm_url" value="" />
+                        <div class="login_input">
+                            <input type="text" id="member_id" name="member_id" value="" placeholder="아이디를 입력하세요."
+                                   onFocus="this.value='';" />
+                            <input type="password" id="password" name="member_pass" value="" placeholder="비밀번호를 입력하세요."
+                                   onFocus="this.value='';" />
+                        </div>
+                        <button onClick="loginSubmit();" class="btn btnBlack btnlogin btnPageLogin">로그인</button>
+
+                        <div class="check_area">
+                            <input type="checkbox" id="idSaveCheck" name="IdCheck" value="" />
+                            <label for="IdCheck">아이디 저장</label>
+                        </div>
+
+                        <div class="btn_area">
+                            <a asp-action="FindIdInput"  class="btn btnGray">아이디 찾기</a>
+                            <a asp-action="FindPassInput" class="btn btnGray">비밀번호 찾기</a>
+                        </div>
+                    </div>
+                    <!--  </form> -->
+
+                    <div class="login_cmnt">
+                        <p>
+                            ㈜엘케이랩 회원으로 가입하시면 다양한 정보와 혜택을 누릴 수 있습니다.<br />
+                            회원 가입은 이메일 주소만으로 쉽게 하실 수 있습니다.
+
+                        </p>
+                        <a asp-controller="member" asp-action="MemberRegSubscription" class="btn btnBlackRe btnJoin">회원가입</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+$(function () {
+            $('header').load('/include/header.html')
+});
+
+$(function () {
+            $('footer').load('/include/footer.html')
+});
+
+$(document).ready(function () {
+
+            // 저장된 쿠키값을 가져와서 ID 칸에 넣어준다. 없으면 공백으로 들어감.
+            var key = getCookie("key");
+            $("#member_id").val(key);
+
+            if ($("#member_id").val() != "") { // 그 전에 ID를 저장해서 처음 페이지 로딩 시, 입력 칸에 저장된 ID가 표시된 상태라면,
+                $("#idSaveCheck").attr("checked", true); // ID 저장하기를 체크 상태로 두기.
+            }
+
+            $("#idSaveCheck").change(function () { // 체크박스에 변화가 있다면,
+                if ($("#idSaveCheck").is(":checked")) { // ID 저장하기 체크했을 때,
+                    setCookie("key", $("#member_id").val(), 7); // 7일 동안 쿠키 보관
+                } else { // ID 저장하기 체크 해제 시,
+                    deleteCookie("key");
+                }
+            });
+
+            // ID 저장하기를 체크한 상태에서 ID를 입력하는 경우, 이럴 때도 쿠키 저장.
+            $("#id").keyup(function () { // ID 입력 칸에 ID를 입력할 때,
+                if ($("#idSaveCheck").is(":checked")) { // ID 저장하기를 체크한 상태라면,
+                    setCookie("key", $("#member_id").val(), 7); // 7일 동안 쿠키 보관
+                }
+            });
+});
+
+function setCookie(cookieName, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + exdays);
+            var cookieValue = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toGMTString());
+            document.cookie = cookieName + "=" + cookieValue;
+}
+
+function deleteCookie(cookieName) {
+            var expireDate = new Date();
+            expireDate.setDate(expireDate.getDate() - 1);
+            document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+}
+
+function getCookie(cookieName) {
+            cookieName = cookieName + '=';
+            var cookieData = document.cookie;
+            var start = cookieData.indexOf(cookieName);
+            var cookieValue = '';
+            if (start != -1) {
+                start += cookieName.length;
+                var end = cookieData.indexOf(';', start);
+                if (end == -1) end = cookieData.length;
+                cookieValue = cookieData.substring(start, end);
+            }
+            return unescape(cookieValue);
+}
+
+
+//로그인 함수
+function loginSubmit() {
+            var login = {
+                member_id: $('#member_id').val(),
+                member_pass: $('#password').val(),
+            };
+
+            var id = $('#member_id').val();
+            var password = $('#password').val();
+
+            $.ajax({
+                type: 'post',
+                url: '/auth/login',
+                contentType: "application/json",
+                data: JSON.stringify(login),
+                processData: false,
+                cache: false,
+                success: function (result) {
+
+                    if (result == 'true') {
+                        alert('로그인 성공');
+                        location.href = "/";
+                    } else {
+                        alert('탈퇴한 회원입니다. 관리자에게 문의해주세요.');
+                        location.href = "/";
+                    }
+                },
+                error: function (error) {
+                    alert("아이디 및 패스워드를 확인해주세요.");
+                    console.log(error);
+                    console.log(error.status);
+                    /* console.log(id);
+                    console.log(password); */
+                    location.href = "/auth/login";
+
+
+                }
+
+            });
+}
+    </script>
+    <!-- 컨텐츠 영역 : e -->
+    <footer></footer>
+</body>
+</html>

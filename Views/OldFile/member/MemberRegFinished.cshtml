@@ -1,0 +1,96 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LKLabHome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <!-- css -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/resources/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="/resources/css/jcarousel.css" rel="stylesheet"/>
+    <link href="/resources/css/flexslider.css" rel="stylesheet"/>
+    <link href="/resources/css/style.css" rel="stylesheet"/>
+
+    <!-- Theme skin -->
+    <link href="/resources/skins/default.css" rel="stylesheet"/>
+
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.js"></script>
+    <script src="/resources/js/jquery.easing.1.3.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/jquery.fancybox.pack.js"></script>
+    <script src="/resources/js/jquery.fancybox-media.js"></script>
+    <script src="/resources/js/google-code-prettify/prettify.js"></script>
+    <script src="/resources/js/portfolio/jquery.quicksand.js"></script>
+    <script src="/resources/js/portfolio/setting.js"></script>
+    <script src="/resources/js/jquery.flexslider.js"></script>
+    <script src="/resources/js/animate.js"></script>
+    <script src="/resources/js/custom.js"></script>
+
+    <link href="~/css/common.css" rel="stylesheet" />
+</head>
+<body>
+<!-- 컨텐츠 영역 : s -->
+<div id="contents_wrap">
+    <header></header>
+    <!-- <div class="menu_loacation">
+        <div class="container">
+            <a href="/Main/PUB" class="home" title="메인페이지로 이동"></a>
+            <span class="depth pointer" onClick="document.location.href='/82_Menu/JoinStep1/PUB';">회원가입</span>
+            <span class="depth"><b>가입 완료</b></span>
+        </div>
+    </div> -->
+
+    <div class="contents">
+        <div class="container">
+            <h2>회원가입</h2>
+
+            <div class="member_step">
+                <!-- Web ver -->
+                <span>약관 및 개인정보취급방침 동의</span>
+                <span>회원 기본정보 입력</span>
+                <span class="current">가입 완료</span>
+                <!-- Mobile ver -->
+                <h3 class="current">가입 완료</h3>
+            </div>
+
+            <div class="join_area">
+                <div class="join_finish">
+                    <!-- <img src="/images/img_login_finish.png" alt=""> -->
+                    <p>
+                        Ki4C   가입을 환영합니다.
+
+                    </p>
+                    가입하신 계정으로 Ki4C의 <br/> 서비스를 모두 이용하실 수 있습니다.
+                </div>
+            </div>
+
+            <div class="btn_area btm_area tCenter">
+                <a href="/" class="btn btnL btnBlack">홈으로</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- 컨텐츠 영역 : e -->
+<footer></footer>
+<script type="text/javascript">
+
+    $(function () {
+        $('header').load('/include/header.html')
+    });
+
+    $(function () {
+        $('footer').load('/include/footer.html')
+    });
+
+
+</script>
+</body>
+</html>

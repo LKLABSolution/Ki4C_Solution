@@ -1,0 +1,135 @@
+﻿@{
+    // Used Table []
+    // 구현된 페이지 링크 목록
+    ViewData["Title"] = "TViewPageList Page";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Page Name</th>
+            <th scope="col">Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Index</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="Home" asp-action="Index">/Index</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Login</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonAuth" asp-action="Login">/common/auth/Login</a>
+            </td>
+        </tr>
+        <tr>
+            <td>CreateAccount</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonAuth" asp-action="CreateAccount">/common/auth/CreateAccount</a>
+            </td>
+        </tr>
+        <tr>
+            <td>FindIdInput</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonAuth" asp-action="FindIdInput">/common/auth/FindIdInput.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>FindIdResultView</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonAuth" asp-action="FindIdResultView">/common/auth/FindIdResultView.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>FindPassInput</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonAuth" asp-action="FindPassInput">/common/auth/FindPassInput.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>FindPassResultView</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonAuth" asp-action="FindPassResultView">/common/auth/FindPassResultView.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>MemberRegSubscription</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonMember" asp-action="MemberRegSubscription">/common/member/MemberRegSubscription.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>MemberReg</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonMember" asp-action="MemberReg">/common/member/MemberReg.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>MemberRegFinished</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonMember" asp-action="MemberRegFinished">/common/member/MemberRegFinished.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>MyInfoRead</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="MemberMypage" asp-action="MyInfoRead">/member/mypage/MyInfoRead.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>RegPostList</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="MemberMypage" asp-action="RegPostList">/member/mypage/RegPostList.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>MyInfoUpdate</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="MemberMypage" asp-action="MyInfoUpdate">/member/mypage/MyInfoUpdate.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>MyInfoDelete</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="MemberMypage" asp-action="MyInfoDelete">/member/mypage/MyInfoDelete.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Greetings</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonCompany" asp-action="Greetings">/common/company/Greetings.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>IntroductionDX</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonCompany" asp-action="IntroductionDX">/common/company/IntroductionDX.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>OnTheWay</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="CommonCompany" asp-action="OnTheWay">/common/company/OnTheWay.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>MemberList</td>
+            <td>
+                <a class="text-primary" asp-area="" asp-controller="ManagerMember" asp-action="MemberList">/manager/member/MemberList.html</a>
+            </td>
+        </tr>
+        <tr>
+            <td>MemberDetailVeiw</td>
+            <td>
+                <a class="text-dark" asp-area="" asp-controller="ManagerMember" asp-action="MemberDetailView">/manager/member/MemberDetailView</a>
+            </td>
+        </tr>
+            
+    </tbody>
+</table>
+        
+
+
+

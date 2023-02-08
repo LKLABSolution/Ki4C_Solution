@@ -1,0 +1,74 @@
+﻿<style >
+/* MemberReg.html */
+#input-form {
+    width: 350px;
+    height: 25px;
+    font-size: 14px;
+    border: 1px solid grey;
+    margin-bottom: 3px;
+}
+
+#line-form {
+    border: solid 0.3px light-grey;
+    width: 400px;
+    position: relative;
+    top: 10px;
+}
+
+#check_area {
+    font-size: 14px;
+    position: relative;
+    top: 10px;
+}
+
+#cancle-button {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: white;
+    border-color: black;
+    width: 150px;
+    height: 40px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#next-button {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: lightgray;
+    color: gray;
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* MemberReg.html */
+@media (max-width: 768px) {
+    #input-form {
+        width: 280px;
+    }
+
+    #line-form {
+        width: 300px;
+    }
+
+    #cancle-button {
+        font-size: 14px;
+        width: 100px;
+        height: 30px;
+    }
+
+    #next-button {
+        font-size: 14px;
+        width: 100px;
+        height: 30px;
+    }
+}
+
+</style >

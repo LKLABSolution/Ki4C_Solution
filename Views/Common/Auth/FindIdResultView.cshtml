@@ -1,0 +1,46 @@
+﻿@{
+    // Used Table [Member]
+    //메인 - 로그인 - 아이디찾기 - 아이디찾기결과화면
+    ViewData["Title"] = "FindIdResultView Page";
+    @model Ki4C_Solution.Models.Common.Auth.CreateAccountModel;
+}
+
+<div class="text-center">
+    <h1 class="display-4">FindIdResultView Page</h1>
+    <p>FindIdResultView Page.</p>
+</div>
+<!-- Id search result page-->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Find Id Result</h3></div>
+                <div class="card-body">
+                    <form asp-controller="CommonAuth" asp-action="FindIdResultView" method="post">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="Input_Name" type="text" placeholder=" " asp-for="Name" />
+                            <label for="Input_Name">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="Input_Phone" type="text" placeholder=" " asp-for="Phone" />
+                            <label for="Input_Phone">Phone</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="Input_Address" type="text" placeholder=" " asp-for="Address" />
+                            <label for="Input_Address">Address</label>
+                        </div>
+                    </form>
+                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                            <button class="btn btn-primary" type="submit">Find Id</button>
+                        </div>    
+                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                            <button class="btn btn-primary" type="submit">Find Password</button>
+                        </div>
+                </div>
+                <div class="card-footer text-center py-3">
+                    <div class="small"><a href="login">Already have an account? Login!</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

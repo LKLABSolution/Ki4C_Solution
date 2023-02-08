@@ -1,0 +1,128 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LKLabHome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <!-- css -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/resources/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="/resources/css/jcarousel.css" rel="stylesheet"/>
+    <link href="/resources/css/flexslider.css" rel="stylesheet"/>
+    <link href="/resources/css/style.css" rel="stylesheet"/>
+
+    <!-- Theme skin -->
+    <link href="/resources/skins/default.css" rel="stylesheet"/>
+
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.js"></script>
+    <script src="/resources/js/jquery.easing.1.3.js"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/jquery.fancybox.pack.js"></script>
+    <script src="/resources/js/jquery.fancybox-media.js"></script>
+    <script src="/resources/js/google-code-prettify/prettify.js"></script>
+    <script src="/resources/js/portfolio/jquery.quicksand.js"></script>
+    <script src="/resources/js/portfolio/setting.js"></script>
+    <script src="/resources/js/jquery.flexslider.js"></script>
+    <script src="/resources/js/animate.js"></script>
+    <script src="/resources/js/custom.js"></script>
+
+
+    <!-- =======================================================
+    Theme Name: 
+    Theme URL: 
+    Author:  김 대 경
+    Author URL: 
+    ======================================================= -->
+    <link href="~/css/mobile.css" rel="stylesheet" />
+</head>
+<body>
+<div id="wrapper">
+    <!-- start header -->
+    <header>
+        <!-- include -->
+    </header>
+    <!-- end header -->
+    <!-- start lnb -->
+    <aside class="lnb">
+
+
+    </aside>
+    <section class="content">
+        <div class="container">
+            <div class="" style="text-align: left;">
+                <h2>비밀번호 찾기</h2>
+            </div>
+            <div class="" style="text-align: right;">
+                Home > 비밀번호 찾기
+            </div>
+            <hr>
+            <form id="forgetIdForm" method="post">
+                아이디 : <input class="form-control" type="text" id="id" name="member_id" placeholder="아이디를 입력하세요">
+                이메일 : <input class="form-control" type="text" id="mail" name="member_mail" placeholder="이메일을 입력하세요">
+                <button class="btn btn-primary" onClick="forgetSubmit();" type="button">비밀번호 찾기</button>
+            </form>
+            <button class="btn btn-primary" onClick="location.href='/auth/loginForm'" type="button">취소</button>
+        </div>
+
+    </section>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $('header').load('/include/header.html')
+        });
+
+        $(function () {
+            $('footer').load('/include/footer.html')
+        });
+
+
+        function forgetSubmit() {
+            var forget = {
+                member_id: $('#id').val(),
+                member_mail: $('#mail').val()
+
+            };
+
+            $.ajax({
+                type: 'post',
+                url: '/auth/findByPass',
+                contentType: "application/json",
+                data: JSON.stringify(forget),
+                processData: false,
+                cache: false,
+                success: function (result) {
+                    alert('임시비밀번호가 메일로 발송되었습니다. ');
+                    location.href = "/auth/loginForm";
+                },
+                error: function (error) {
+                    alert("이메일 또는 아이디를 확인해주세요");
+                    console.log(error);
+                    console.log(error.status);
+                    location.href = "/auth/findIdForm";
+
+
+                }
+
+            });
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <hr class="m-divider">
+    <footer>
+        <!-- include -->
+    </footer>
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+
+
+</body>
+
+</html>

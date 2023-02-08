@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ki4C_Solution", "Ki4C_Solution.csproj", "{DD651DE8-6B2F-4904-9562-56B4EC26DBDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD651DE8-6B2F-4904-9562-56B4EC26DBDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD651DE8-6B2F-4904-9562-56B4EC26DBDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD651DE8-6B2F-4904-9562-56B4EC26DBDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD651DE8-6B2F-4904-9562-56B4EC26DBDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {964ED994-DDF5-462C-AA2F-1DB82481EC64}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://211.233.61.251:8081/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Ki4C_Solution.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal
