@@ -3,6 +3,7 @@
     // 회원관리 - 가입
     
     ViewData["Title"] = "MemberReg Page";
+    @model Ki4C_Solution.Models.Common.Member.MemberRegModel
 }
 @*<link rel="stylesheet" href="~/css/Common/Member/MemberReg.css" />*@
 <!-- 섹션 -->
@@ -108,8 +109,115 @@
     </div>
     <!-- 콘텐츠 -->
 </section>*@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <h3 class="text-center font-weight-light my-4">회원가입</h3>
+                    <div class="d-flex justify-content-end">
+                        <a href="#">Home</a> &gt; 회원가입
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="CommonAuth" asp-action="MemberReg" method="post">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Id" type="text" placeholder=" " asp-for="ID" />
+                            <label for="input-Id">아이디</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Password" type="password" placeholder=" " asp-for="Password" />
+                            <label for="input-Password">비밀번호</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Password-Check" type="password" placeholder=" " asp-for="PasswordConfirm" />
+                            <label for="input-Password-Check">비밀번호 확인</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Name" type="text" placeholder=" " asp-for="Name" />
+                            <label for="input-Name">이름</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Email" type="email" placeholder=" " asp-for="Email" />
+                            <label for="input-Email">이메일</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Phone" type="text" placeholder=" " asp-for="Phone" />
+                            <label for="input-Phone">휴대폰 번호</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Address" type="text" placeholder=" " asp-for="Address" />
+                            <label for="input-Address">주소</label>
+                        </div>
+                        <!-- 주민 번호-->
+                        @*
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Resident-Number" type="text" placeholder=" " asp-for="ResidentNumber" />
+                            <label for="input-Resident-Number">주민번호</label>
+                        </div>
+                        *@
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Company" type="text" placeholder=" " asp-for="Company" />
+                            <label for="input-Company">회사명</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Department" type="text" placeholder=" " asp-for="Department" />
+                            <label for="input-Department">부서명</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Position" type="text" placeholder=" " asp-for="Position" />
+                            <label for="input-Position">직급</label>
+                        </div>
+                        <!-- check1 ~ 8-->
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="input-Check1" type="checkbox" placeholder=" " asp-for="Check1" onchange="MemberRegJS.check1Clicked();" />
+                            <label class="form-check-label" for="input-Check1">전체 동의</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="input-Check2" type="checkbox" placeholder=" " asp-for="Check2" />
+                            <label class="form-check-label" for="input-Check2">개인정보 수집 및 이용 동의(필수)</label>
+                            <input class="form-input text-end" id="input-Check2-Detail" type="checkbox" placeholder=" " onchange="MemberRegJS.check2_DetailShow();" />
+                            <label for="input-Check2-Detail" class="text-end">자세히 보기</label>
 
-<section>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="input-Check3" type="checkbox" placeholder=" " asp-for="Check3" />
+                            <label class="form-check-label" for="input-Check3">개인정보 취급위탁 동의(필수)</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="input-Check4" type="checkbox" placeholder=" " asp-for="Check4" />
+                            <label class="form-check-label" for="input-Check4">개인정보 국외이전 동의(필수)</label>
+                            </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="input-Check5" type="checkbox" placeholder=" " asp-for="Check5" />
+                            <label class="form-check-label" for="input-Check5">개인정보 공유 및 제공(제3자) 동의(필수)</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="input-Check6" type="checkbox" placeholder=" " asp-for="Check6" />
+                            <label class="form-check-label" for="input-Check6">서비스 이용약관(필수)</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="input-Check7" type="checkbox" placeholder=" " asp-for="Check7" />
+                            <label class="form-check-label" for="input-Check7">만 16세 이상 서비스 이용 동의(필수)</label>
+                            </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="input-Check8" type="checkbox" placeholder=" " asp-for="Check8" />
+                            <label class="form-check-label" for="input-Check8">마케팅 수신동의(선택)</label>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                            <button class="btn btn-primary" type="button" onclick="MemberRegJS.inputNullCheckFunction();">회원가입</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center py-3">
+                    <div class="small"><a href="register">Need an account? Sign up!</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<section>
     <div id="wrap" class="border border-danger">
         <h2 class="text-center">회원가입</h2>
         <div class="d-flex justify-content-end">
@@ -124,36 +232,36 @@
                 <br><br>
                 <form>
                 <div class="form-group">
-                    <label for="input-form" class="font-size-14">아이디 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-form" placeholder="아이디">
+                        <label for="input-Id" class="font-size-14">아이디 <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="input-Id" placeholder="아이디">
                 </div>
                 <div class="form-group">
-                    <label for="input-form" class="font-size-14">이메일 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-form" placeholder="이메일 주소는 아이디로 사용됩니다.">
+                        <label for="input-Email" class="font-size-14">이메일 <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="input-Email" placeholder="이메일 주소는 아이디로 사용됩니다." oninput="this.value=this.value.replace(/(\s*)/g,'').replace(/[^a-zA-Z0-9~!@@#$%^&*()_+|<>?:{}]/g,'').replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'').replace(/[^a-zA-Z0-9]/g,'').replace(/[^0-9]/g,'').replace(/[^-]/g,'').replace(/[^-]/g,'').replace(/[^@@]/g,'');">
                 </div>
                 <div class="form-group">
-                    <label for="input-form" class="font-size-14">비밀번호 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-form" placeholder="영문+숫자+특수기호 포함 8~12자리">
+                        <label for="input-pw" class="font-size-14">비밀번호 <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="input-pw" placeholder="영문+숫자+특수기호 포함 8~12자리">
                 </div>
                 <div class="form-gruop">
-                    <label for="input-form" class="font-size-14">비밀번호 확인 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-form" placeholder="비밀번호를 한번 더 입력해주세요.">
+                        <label for="input-pw-check" class="font-size-14">비밀번호 확인 <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="input-pw-check" placeholder="비밀번호를 한번 더 입력해주세요.">
                 </div>
                 <div class="form-gruop">
-                    <label for="input-form" class="font-size-14">이름 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-form" placeholder="이름을 입력해주세요.">
+                        <label for="input-Name" class="font-size-14">이름 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-Name" placeholder="이름을 입력해주세요.">
                 </div>
                 <div class="form-gruop">
-                    <label for="input-form" class="font-size-14">휴대폰 번호 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-form" placeholder="휴대폰 번호를 입력해주세요.">
+                        <label for="input-PhoneNumber" class="font-size-14">휴대폰 번호 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-PhoneNumber" placeholder="휴대폰 번호를 입력해주세요." oninput="this.value=this.value.replace(/(\s*)/g,'').replace(/[^a-zA-Z0-9~!@@#$%^&*()_+|<>?:{}]/g,'').replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'').replace(/[^a-zA-Z0-9]/g,'').replace(/[^0-9]/g,'').replace(/[^-]/g,'').replace(/[^-]/g,'').replace(/[^@@]/g,'');">
                 </div>
                 <div class="form-gruop">
-                    <label for="input-form" class="font-size-14">생년월일 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-form" placeholder="생년월일을 입력해주세요.">
+                        <label for="input-BirthDay" class="font-size-14">생년월일 <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="input-BirthDay" placeholder="생년월일을 입력해주세요.">
                 </div>
                 <div class="form-gruop">
-                    <label for="input-form" class="font-size-14">성별 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-form" placeholder="성별을 입력해주세요.">
+                        <label for="input-Gender" class="font-size-14">성별 <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="input-Gender" placeholder="성별을 입력해주세요.">
                 </div>
                 <!-- 개인정보 동의 Chack box -->
                 <div class="form-check">
@@ -194,44 +302,102 @@
                 <!-- cencel and submit button -->
                 <div class="form-gruop">
                     <button type="button" class="btn btn-secondary">취소</button>
-                    <button type="submit" class="btn btn-primary">등록</button>
+                    <button type="submit" class="btn btn-primary" onclick="MemberRegJS.inputNullCheckFunction();">등록</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+*@
 <script>
     let MemberRegJS = {
         check1Clicked : function(){
-            if($('#check1').is(':checked')){
-                $('#check2').prop('checked', true);
-                $('#check3').prop('checked', true);
-                $('#check4').prop('checked', true);
-                $('#check5').prop('checked', true);
-                $('#check6').prop('checked', true);
-                $('#check7').prop('checked', true);
-                $('#check8').prop('checked', true);
-            }else{
-                $('#check2').prop('checked', false);
-                $('#check3').prop('checked', false);
-                $('#check4').prop('checked', false);
-                $('#check5').prop('checked', false);
-                $('#check6').prop('checked', false);
-                $('#check7').prop('checked', false);
-                $('#check8').prop('checked', false);
+            if ($('#input-Check1').is(':checked')) {
+                $('#input-Check2').prop('checked', true);
+                $('#input-Check3').prop('checked', true);
+                $('#input-Check4').prop('checked', true);
+                $('#input-Check5').prop('checked', true);
+                $('#input-Check6').prop('checked', true);
+                $('#input-Check7').prop('checked', true);
+                $('#input-Check8').prop('checked', true);
+            } else {
+                $('#input-Check2').prop('checked', false);
+                $('#input-Check3').prop('checked', false);
+                $('#input-Check4').prop('checked', false);
+                $('#input-Check5').prop('checked', false);
+                $('#input-Check6').prop('checked', false);
+                $('#input-Check7').prop('checked', false);
+                $('#input-Check8').prop('checked', false);
             }
+
         },
         checkOrderClick : function(){
             //this function is check 2~7 checkbox onclick event
             // check1 is checked, if all checkbox is checked
-            if($('#check2').is(':checked') && $('#check3').is(':checked') && $('#check4').is(':checked') && $('#check5').is(':checked') && $('#check6').is(':checked') && $('#check7').is(':checked')){
-                $('#check1').prop('checked', true);
+            if ($('#input-check2').is(':checked') && $('#input-check3').is(':checked') && $('#input-check4').is(':checked') && $('#input-check5').is(':checked') && $('#input-check6').is(':checked') && $('#input-check7').is(':checked')) {
+                $('#input-check1').prop('checked', true);
             }else{
-                $('#check1').prop('checked', false);
+                $('#input-check1').prop('checked', false);
             }
         },
-        inputNullCheckFunction : 
+        inputNullCheckFunction : function(){
+            //this MemberReg page input null check function input tag id patten is 'input-ID'
+            if ($('#input-id').val() == '') {
+                alert('아이디를 입력해주세요.');
+                $('#input-id').focus();
+                return false;
+            }
+            if ($('#input-pw').val() == '') {
+                alert('비밀번호를 입력해주세요.');
+                $('#input-pw').focus();
+                return false;
+            }
+            if ($('#input-pw-check').val() == '') {
+                alert('비밀번호 확인을 입력해주세요.');
+                $('#input-pw-check').focus();
+                return false;
+            }
+            if ($('#input-pw').val() != $('#input-pw-check').val()) {
+                alert('비밀번호가 일치하지 않습니다.');
+                $('#input-pw-check').focus();
+                return false;
+            }
+            if ($('#input-name').val() == '') {
+                alert('이름을 입력해주세요.');
+                $('#input-name').focus();
+                return false;
+            }
+            if ($('#input-birth').val() == '') {
+                alert('생년월일을 입력해주세요.');
+                $('#input-birth').focus();
+                return false;
+            }
+            if ($('#input-phone').val() == '') {
+                alert('휴대폰 번호를 입력해주세요.');
+                $('#input-phone').focus();
+                return false;
+            }
+            if ($('#input-email').val() == '') {
+                alert('이메일을 입력해주세요.');
+                $('#input-email').focus();
+                return false;
+            }
+            if ($('#input-address').val() == '') {
+                alert('주소를 입력해주세요.');
+                $('#input-address').focus();
+                return false;
+            }
+            if ($('#input-detail-address').val() == '') {
+                alert('상세주소를 입력해주세요.');
+                $('#input-detail-address').focus();
+                return false;
+            }
+            if ($('#input-postcode').val() == '') {
+                alert('우편번호를 입력해주세요.');
+                $('#input-postcode').focus();
+                return false;
+            }
+        },
     }
 </script>
 
