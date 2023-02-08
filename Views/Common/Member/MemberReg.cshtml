@@ -120,35 +120,40 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form asp-controller="CommonAuth" asp-action="MemberReg" method="post">
+                    <form asp-controller="CommonMember" asp-action="MemberReg" method="post" id="input-form">
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Id" type="text" placeholder=" " asp-for="ID" />
-                            <label for="input-Id">아이디</label>
+                            <input class="form-control" id="input-Id" type="text" placeholder=" " asp-for="ID" value="" />
+                            <label for="input-Id">아이디<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Password" type="password" placeholder=" " asp-for="Password" />
-                            <label for="input-Password">비밀번호</label>
+                            <input class="form-control" id="input-Password" type="password" placeholder=" " asp-for="Password" value="" />
+                            <label for="input-Password">비밀번호<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Password-Check" type="password" placeholder=" " asp-for="PasswordConfirm" />
-                            <label for="input-Password-Check">비밀번호 확인</label>
+                            <input class="form-control" id="input-Password-Check" type="password" placeholder=" " asp-for="PasswordConfirm" value="" />
+                            <label for="input-Password-Check">비밀번호 확인<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Name" type="text" placeholder=" " asp-for="Name" />
-                            <label for="input-Name">이름</label>
+                            <input class="form-control" id="input-Name" type="text" placeholder=" " asp-for="Name" value="" />
+                            <label for="input-Name">이름<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Email" type="email" placeholder=" " asp-for="Email" />
-                            <label for="input-Email">이메일</label>
+                            <input class="form-control" id="input-Email" type="email" placeholder=" " asp-for="Email" value="" />
+                            <label for="input-Email">이메일<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Phone" type="text" placeholder=" " asp-for="Phone" />
-                            <label for="input-Phone">휴대폰 번호</label>
+                            <input class="form-control" id="input-Phone" type="text" placeholder=" " asp-for="Phone" value="" />
+                            <label for="input-Phone">휴대폰 번호<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Address" type="text" placeholder=" " asp-for="Address" />
-                            <label for="input-Address">주소</label>
+                            <input class="form-control" id="input-Address" type="text" placeholder=" " asp-for="Address" value="" onclick="MemberRegJS.daumAddressAPI();" />
+                            <label for="input-Address">주소<a style="color: red;">*</a></label>
                         </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Address-Detail" type="text" placeholder=" " asp-for="AddressDetail" value="" />
+                            <label for="input-Address-Detail">상세 주소<a style="color: red;">*</a></label>
+                        </div>
+                        
                         <!-- 주민 번호-->
                         @*
                         <div class="form-floating mb-3">
@@ -157,15 +162,15 @@
                         </div>
                         *@
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Company" type="text" placeholder=" " asp-for="Company" />
-                            <label for="input-Company">회사명</label>
+                            <input class="form-control" id="input-Company" type="text" placeholder=" " asp-for="Company" value="" />
+                            <label for="input-Company">회사명<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Department" type="text" placeholder=" " asp-for="Department" />
+                            <input class="form-control" id="input-Department" type="text" placeholder=" " asp-for="Department" value="" />
                             <label for="input-Department">부서명</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Position" type="text" placeholder=" " asp-for="Position" />
+                            <input class="form-control" id="input-Position" type="text" placeholder=" " asp-for="Position" value="" />
                             <label for="input-Position">직급</label>
                         </div>
                         <!-- check1 ~ 8-->
@@ -175,30 +180,30 @@
                         </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" id="input-Check2" type="checkbox" placeholder=" " asp-for="Check2" />
-                            <label class="form-check-label" for="input-Check2">개인정보 수집 및 이용 동의(필수)</label>
+                            <label class="form-check-label" for="input-Check2">개인정보 수집 및 이용 동의(필수)<a style="color: red;">*</a></label>
                             <input class="form-input text-end" id="input-Check2-Detail" type="checkbox" placeholder=" " onchange="MemberRegJS.check2_DetailShow();" />
                             <label for="input-Check2-Detail" class="text-end">자세히 보기</label>
 
                         </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" id="input-Check3" type="checkbox" placeholder=" " asp-for="Check3" />
-                            <label class="form-check-label" for="input-Check3">개인정보 취급위탁 동의(필수)</label>
+                            <label class="form-check-label" for="input-Check3">개인정보 취급위탁 동의(필수)<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" id="input-Check4" type="checkbox" placeholder=" " asp-for="Check4" />
-                            <label class="form-check-label" for="input-Check4">개인정보 국외이전 동의(필수)</label>
+                            <label class="form-check-label" for="input-Check4">개인정보 국외이전 동의(필수)<a style="color: red;">*</a></label>
                             </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" id="input-Check5" type="checkbox" placeholder=" " asp-for="Check5" />
-                            <label class="form-check-label" for="input-Check5">개인정보 공유 및 제공(제3자) 동의(필수)</label>
+                            <label class="form-check-label" for="input-Check5">개인정보 공유 및 제공(제3자) 동의(필수)<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" id="input-Check6" type="checkbox" placeholder=" " asp-for="Check6" />
-                            <label class="form-check-label" for="input-Check6">서비스 이용약관(필수)</label>
+                            <label class="form-check-label" for="input-Check6">서비스 이용약관(필수)<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" id="input-Check7" type="checkbox" placeholder=" " asp-for="Check7" />
-                            <label class="form-check-label" for="input-Check7">만 16세 이상 서비스 이용 동의(필수)</label>
+                            <label class="form-check-label" for="input-Check7">만 16세 이상 서비스 이용 동의(필수)<a style="color: red;">*</a></label>
                             </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" id="input-Check8" type="checkbox" placeholder=" " asp-for="Check8" />
@@ -209,9 +214,6 @@
                             <button class="btn btn-primary" type="button" onclick="MemberRegJS.inputNullCheckFunction();">회원가입</button>
                         </div>
                     </form>
-                </div>
-                <div class="card-footer text-center py-3">
-                    <div class="small"><a href="register">Need an account? Sign up!</a></div>
                 </div>
             </div>
         </div>
@@ -311,6 +313,42 @@
 *@
 <script>
     let MemberRegJS = {
+        daumAddressAPI : function(){
+            //daum 주소 API
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                    // 내려오는 변수가 값이 없는 상태라면 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var fullAddr = data.address; // 최종 주소 변수
+                    var extraAddr = ''; // 조합형 주소 변수
+                    // 기본 주소가 도로명 타입일때 조합한다.
+                    if (data.addressType === 'R') {
+                        //법정동명이 있을 경우 추가한다.
+                        if (data.bname !== '') {
+                            extraAddr += data.bname;
+                        }
+                        // 건물명이 있을 경우 추가한다.
+                        if (data.buildingName !== '') {
+                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                        }
+                        // 조합형 주소의 유무에 따라 양쪽에 괄호를 추가하고 최종 주소를 만든다.
+                        fullAddr += (extraAddr !== '' ? ' (' + extraAddr + ')' : '');
+                    }
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('input-Address').value = fullAddr;
+                    // 커서를 상세주소 필드로 이동한다.
+                    document.getElementById('input-Address-Detail').focus();
+                }
+            }).open();
+        },
+        isEmpty: function (value) {
+            if (value == null || value == undefined || value == "") {
+                return true;
+            } else {
+                return false;
+            }
+        },
         check1Clicked : function(){
             if ($('#input-Check1').is(':checked')) {
                 $('#input-Check2').prop('checked', true);
@@ -342,62 +380,125 @@
         },
         inputNullCheckFunction : function(){
             //this MemberReg page input null check function input tag id patten is 'input-ID'
-            if ($('#input-id').val() == '') {
+            if (MemberRegJS.isEmpty($('#input-Id').val())) {
                 alert('아이디를 입력해주세요.');
                 $('#input-id').focus();
                 return false;
             }
-            if ($('#input-pw').val() == '') {
+            if (MemberRegJS.isEmpty($('#input-Password').val())) {
                 alert('비밀번호를 입력해주세요.');
                 $('#input-pw').focus();
                 return false;
             }
-            if ($('#input-pw-check').val() == '') {
+            if (MemberRegJS.isEmpty($('#input-Password-Check').val())) {
                 alert('비밀번호 확인을 입력해주세요.');
                 $('#input-pw-check').focus();
                 return false;
             }
-            if ($('#input-pw').val() != $('#input-pw-check').val()) {
+            if ($('#input-Password').val() != $('#input-Password-Check').val()) {
                 alert('비밀번호가 일치하지 않습니다.');
                 $('#input-pw-check').focus();
                 return false;
             }
-            if ($('#input-name').val() == '') {
+            if (MemberRegJS.isEmpty($('#input-Name').val())) {
                 alert('이름을 입력해주세요.');
-                $('#input-name').focus();
+                $('#input-Name').focus();
                 return false;
             }
-            if ($('#input-birth').val() == '') {
-                alert('생년월일을 입력해주세요.');
-                $('#input-birth').focus();
-                return false;
-            }
-            if ($('#input-phone').val() == '') {
-                alert('휴대폰 번호를 입력해주세요.');
-                $('#input-phone').focus();
-                return false;
-            }
-            if ($('#input-email').val() == '') {
+            if (MemberRegJS.isEmpty($('#input-Email').val())) {
                 alert('이메일을 입력해주세요.');
-                $('#input-email').focus();
+                $('#input-Email').focus();
                 return false;
             }
-            if ($('#input-address').val() == '') {
+            if (MemberRegJS.isEmpty($('#input-Phone').val())) {
+                alert('휴대폰 번호를 입력해주세요.');
+                $('#input-Phone').focus();
+                return false;
+            }
+            if (MemberRegJS.isEmpty($('#input-Address').val())) {
                 alert('주소를 입력해주세요.');
-                $('#input-address').focus();
+                $('#input-Address').focus();
                 return false;
             }
-            if ($('#input-detail-address').val() == '') {
-                alert('상세주소를 입력해주세요.');
-                $('#input-detail-address').focus();
+            //if (MemberRegJS.isEmpty($('#input-Resident-Number').val())) {
+            //    alert('주민번호를 입력해주세요.');
+            //    $('#input-detail-address').focus();
+            //    return false;
+            //}
+            //if (MemberRegJS.isEmpty($('#input-postcode').val())) {
+            //    alert('우편번호를 입력해주세요.');
+            //    $('#input-postcode').focus();
+            //    return false;
+            //}
+            if (MemberRegJS.isEmpty($('#input-Company').val())) {
+                alert('회사명을 입력해주세요.');
+                $('#input-Company').focus();
                 return false;
             }
-            if ($('#input-postcode').val() == '') {
-                alert('우편번호를 입력해주세요.');
-                $('#input-postcode').focus();
+            //if (MemberRegJS.isEmpty($('#input-Department').val())) {
+            //    alert('부서명을 입력해주세요.');
+            //    $('#input-Department').focus();
+            //    return false;
+            //}
+            //if (MemberRegJS.isEmpty($('#input-Position').val())) {
+            //    alert('직급을 입력해주세요.');
+            //    $('#input-Position').focus();
+            //    return false;
+            //}
+            //check2 ~ check8 is checked 
+            if (!$('#input-Check2').is(':checked') && !$('#input-Check3').is(':checked') && !$('#input-Check4').is(':checked') && !$('#input-Check5').is(':checked') && !$('#input-Check6').is(':checked') && !$('#input-Check7').is(':checked') && !$('#input-Check8').is(':checked')) {
+                alert('이용약관에 동의해주세요.');
                 return false;
             }
+            MemberRegJS.MemberRegSubmit();
         },
+        MemberJoinReqest : function(){
+            //form data create obj end ajax request CommonMember/MemberReg
+            var formData = new FormData();
+            formData.append('id', $('#input-Id').val());
+            formData.append('password', $('#input-Password').val());
+            formData.append('name', $('#input-Name').val());
+            formData.append('email', $('#input-Email').val());
+            formData.append('phone', $('#input-Phone').val());
+            formData.append('address', $('#input-Address').val());
+            formData.append('company', $('#input-Company').val());
+            formData.append('department', $('#input-Department').val());
+            formData.append('position', $('#input-Position').val());
+            formData.append('residentNumber', $('#input-Resident-Number').val());
+            formData.append('postcode', $('#input-postcode').val());
+            formData.append('detailAddress', $('#input-detail-address').val());
+            formData.append('check1', $('#input-Check1').is(':checked'));
+            formData.append('check2', $('#input-Check2').is(':checked'));
+            formData.append('check3', $('#input-Check3').is(':checked'));
+            formData.append('check4', $('#input-Check4').is(':checked'));
+            formData.append('check5', $('#input-Check5').is(':checked'));
+            formData.append('check6', $('#input-Check6').is(':checked'));
+            formData.append('check7', $('#input-Check7').is(':checked'));
+            formData.append('check8', $('#input-Check8').is(':checked'));
+            $.ajax({
+                url: '/CommonMember/MemberReg',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    if (data.result == 'success') {
+                        alert('회원가입이 완료되었습니다.');
+                        location.href = '/CommonMember/Login';
+                    }
+                    else {
+                        alert('회원가입에 실패하였습니다.');
+                    }
+                },
+                error: function (request, status, error) {
+                    alert('회원가입에 실패하였습니다.');
+                }
+            });
+        },
+        MemberRegSubmit : function(){
+            // id input-form submit
+            $('#input-form').submit();
+        }
     }
 </script>
 
