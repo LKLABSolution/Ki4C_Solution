@@ -1,9 +1,10 @@
 ﻿@{
-    // Used Table [Member]
-    //메인 - 로그인 - 비밀번호찾기 - 비밀번호찾기결과화면
-    ViewData["Title"] = "Find Password result Page";
-}
+    // Used Table [Login, Member]
+    //메인 - 로그인
+    ViewData["Title"] = "LogOut Page";
+    @model Ki4C_Solution.Models.Common.Auth.LoginModel
 
+}
 <div class="d-flex align-items-center vh-100">
     <div class="container text-center">
         <div class="row">
@@ -12,10 +13,10 @@
                     <img src="~/images/logo.png" alt="logo" width="80%" height="80%" />
                 </h1>
                 <p class="lead text-muted">이메일 주소 출력란</p>
-                <p class="lead text-muted">Please check your registered email.</p>
+                <p class="lead text-muted">정상 로그아웃 하였습니다.</p>
+                <p class="lead text-muted">수고하셨습니다.</p>
                 <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="index">메인으로 이동</a>
             </div>
         </div>
     </div>
 </div>
-

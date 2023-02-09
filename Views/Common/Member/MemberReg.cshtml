@@ -4,111 +4,9 @@
     
     ViewData["Title"] = "MemberReg Page";
     @model Ki4C_Solution.Models.Common.Member.MemberRegModel
+    
 }
-@*<link rel="stylesheet" href="~/css/Common/Member/MemberReg.css" />*@
-<!-- 섹션 -->
-@*<section>
-    <!-- 콘텐츠 -->
-    <div id="wrap" style="border:1px solid red;">
-        <h2>회원가입</h2>
-        <div style="float: right;">
-            <a href="#">Home</a>
-            &gt;
-            회원가입
-        </div>
-        <br>
-        <hr />
-        <!-- 회원가입 -->
-        <div class="contents" style="display: flex; justify-content: center;">
-            <div style="width: 80%;">
-                <br>
-                <h1>계정 만들기</h1>
-                <a style="font-size: 12px;">Ki4C의 다양한 솔루션을 하나의 통합 계정으로 간편하게 사용할 수 있습니다.</a> <br> <br>
-                <a style="font-size: 14px;">아이디 </a> <a style="color: red;">*</a> <br>
-                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
-                    <input id="input-form" type="text" placeholder="아이디" />
-                </form> <br>
-                <a style="font-size: 14px;">이메일 </a> <a style="color: red;">*</a> <br>
-                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
-                    <input id="input-form" type="text" placeholder="이메일 주소는 아이디로 사용됩니다." />
-                </form> <br>
-                <a style="font-size: 14px;">비밀번호 </a> <a style="color: red;">*</a> <br>
-                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
-                    <input id="input-form" type="text" placeholder="영문+숫자+특수기호 포함 8~12자리" />
-                </form> <br>
-                <a style="font-size: 14px;">비밀번호 확인 </a> <a style="color: red;">*</a> <br>
-                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
-                    <input id="input-form" type="text" />
-                </form> <br>
-                <a style="font-size: 14px;">이름 </a> <a style="color: red;">*</a> <br>
-                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
-                    <input id="input-form" type="text" />
-                </form> <br>
-                <a style="font-size: 14px;">휴대전화번호 </a> <a style="color: red;">*</a> <br>
-                <form style="padding-top: 5px; display: inline-block;">
-                    <input id="input-form" type="text" placeholder="대한민국(+82)" />
-                </form> <br>
-                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
-                    <input id="input-form" type="text" placeholder="번호를 입력해주세요." />
-                </form> <br>
-                <a style="font-size: 14px;">회사명 </a> <a style="color: red;">*</a> <br>
-                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
-                    <input id="input-form" type="text" />
-                </form> <br>
-                <a style="font-size: 14px;">부서명</a> <br>
-                <form style="padding-top: 5px; padding-bottom: 10px; display: inline-block;">
-                    <input id="input-form" type="text" />
-                </form> <br>
-                <div id="check_area">
-                    <input type="checkbox" name="check1">
-                    <label for="check1">전체 동의</label>
-                </div>
-                <hr align="left" ; id="line-form" />
-                <div id="check_area">
-                    <input type="checkbox" name="check2">
-                    <label for="check2">개인정보 수집 및 이용 동의(필수)</label>
-                </div>
-                <hr align="left" ; id="line-form" />
-                <div id="check_area">
-                    <input type="checkbox" name="check3">
-                    <label for="check3">개인정보 취급위탁 동의(필수)</label>
-                </div>
-                <hr align="left" ; id="line-form" />
-                <div id="check_area">
-                    <input type="checkbox" name="check4">
-                    <label for="check4">개인정보 국외이전 동의(필수)</label>
-                </div>
-                <hr align="left" ; id="line-form" />
-                <div id="check_area">
-                    <input type="checkbox" name="check5">
-                    <label for="check5">개인정보 공유 및 제공(제3자) 동의(필수)</label>
-                </div>
-                <hr align="left" ; id="line-form" />
-                <div id="check_area">
-                    <input type="checkbox" name="check6">
-                    <label for="check6">서비스 이용약관(필수)</label>
-                </div>
-                <hr align="left" ; id="line-form" />
-                <div id="check_area">
-                    <input type="checkbox" name="check7">
-                    <label for="check7">만 16세 이상 서비스 이용 동의(필수)</label>
-                </div>
-                <hr align="left" ; id="line-form" />
-                <div id="check_area">
-                    <input type="checkbox" name="check8">
-                    <label for="check8">마케팅 수신동의(선택)</label>
-                </div> <br> <br>
-                <div style="padding-left: 50px;">
-                    <input id="cancle-button" type="submit" value="취소" />
-                    <input id="next-button" type="submit" value="다음" />
-                </div>
-            </div>
-        </div>
-        <br> <br> <br>
-        <!-- 회원가입 -->
-    </div>
-    <!-- 콘텐츠 -->
-</section>*@
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-5">
@@ -124,6 +22,10 @@
                         <div class="form-floating mb-3">
                             <input class="form-control" id="input-Id" type="text" placeholder=" " asp-for="ID" value="" />
                             <label for="input-Id">아이디<a style="color: red;">*</a></label>
+                            <!-- add ID Check Button-->
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-outline-success idCheckBtn " onclick="MemberRegJS.IdCheckClicked();">아이디 중복확인</button>
+                            </div>
                         </div>
                         <div class="form-floating mb-3">
                             <input class="form-control" id="input-Password" type="password" placeholder=" " asp-for="Password" value="" />
@@ -138,12 +40,16 @@
                             <label for="input-Name">이름<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Email" type="email" placeholder=" " asp-for="Email" value="" />
+                            <input class="form-control" id="input-Email" type="email" placeholder=" " asp-for="Email" value=""/>
                             <label for="input-Email">이메일<a style="color: red;">*</a></label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="input-Phone" type="text" placeholder=" " asp-for="Phone" value="" />
+                            <input class="form-control" id="input-Phone" type="text" placeholder=" " asp-for="Phone" value="" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
                             <label for="input-Phone">휴대폰 번호<a style="color: red;">*</a></label>
+                            <!-- add Phone Number Check Button-->
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-outline-success justify-content-between phoneCheckBtn" onclick="MemberRegJS.PhoneCheckClicked();">번호 중복확인</button>
+                            </div>
                         </div>
                         <div class="form-floating mb-3">
                             <input class="form-control" id="input-Address" type="text" placeholder=" " asp-for="Address" value="" onclick="MemberRegJS.daumAddressAPI();" />
@@ -210,109 +116,57 @@
                             <label class="form-check-label" for="input-Check8">마케팅 수신동의(선택)</label>
                         </div>
 
-                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                            <button class="btn btn-primary" type="button" onclick="MemberRegJS.inputNullCheckFunction();">회원가입</button>
+                        <div class="d-flex justify-content-center mt-4 mb-0">
+                            <button class="btn btn-primary" type="submit" >회원가입</button>
                         </div>
                     </form>
+                </div>
+                <div class="card-footer text-center py-3 d-flex justify-content-center">
+                    <div class="small m-2"><a class="btn btn-primary" asp-area="" asp-controller="CommonAuth" asp-action="Login">로그인</a></div>
+                    <div class="small m-2"><a class="btn btn-primary" asp-area="" asp-controller="CommonAuth" asp-action="FindIdInput">아이디 찾기</a></div>
+                    <div class="small m-2"><a class="btn btn-primary" asp-area="" asp-controller="CommonAuth" asp-action="FindPassInput">비밀번호 찾기</a></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@*<section>
-    <div id="wrap" class="border border-danger">
-        <h2 class="text-center">회원가입</h2>
-        <div class="d-flex justify-content-end">
-            <a href="#">Home</a> &gt; 회원가입
-        </div>
-        <hr>
-        <div class="d-flex justify-content-center">
-            <div class="w-80">
-                <br>
-                <h1 class="text-center">계정 만들기</h1>
-                <p class="text-center font-size-sm">Ki4C의 다양한 솔루션을 하나의 통합 계정으로 간편하게 사용할 수 있습니다.</p>
-                <br><br>
-                <form>
-                <div class="form-group">
-                        <label for="input-Id" class="font-size-14">아이디 <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="input-Id" placeholder="아이디">
-                </div>
-                <div class="form-group">
-                        <label for="input-Email" class="font-size-14">이메일 <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="input-Email" placeholder="이메일 주소는 아이디로 사용됩니다." oninput="this.value=this.value.replace(/(\s*)/g,'').replace(/[^a-zA-Z0-9~!@@#$%^&*()_+|<>?:{}]/g,'').replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'').replace(/[^a-zA-Z0-9]/g,'').replace(/[^0-9]/g,'').replace(/[^-]/g,'').replace(/[^-]/g,'').replace(/[^@@]/g,'');">
-                </div>
-                <div class="form-group">
-                        <label for="input-pw" class="font-size-14">비밀번호 <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="input-pw" placeholder="영문+숫자+특수기호 포함 8~12자리">
-                </div>
-                <div class="form-gruop">
-                        <label for="input-pw-check" class="font-size-14">비밀번호 확인 <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="input-pw-check" placeholder="비밀번호를 한번 더 입력해주세요.">
-                </div>
-                <div class="form-gruop">
-                        <label for="input-Name" class="font-size-14">이름 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-Name" placeholder="이름을 입력해주세요.">
-                </div>
-                <div class="form-gruop">
-                        <label for="input-PhoneNumber" class="font-size-14">휴대폰 번호 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-PhoneNumber" placeholder="휴대폰 번호를 입력해주세요." oninput="this.value=this.value.replace(/(\s*)/g,'').replace(/[^a-zA-Z0-9~!@@#$%^&*()_+|<>?:{}]/g,'').replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'').replace(/[^a-zA-Z0-9]/g,'').replace(/[^0-9]/g,'').replace(/[^-]/g,'').replace(/[^-]/g,'').replace(/[^@@]/g,'');">
-                </div>
-                <div class="form-gruop">
-                        <label for="input-BirthDay" class="font-size-14">생년월일 <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="input-BirthDay" placeholder="생년월일을 입력해주세요.">
-                </div>
-                <div class="form-gruop">
-                        <label for="input-Gender" class="font-size-14">성별 <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="input-Gender" placeholder="성별을 입력해주세요.">
-                </div>
-                <!-- 개인정보 동의 Chack box -->
-                <div class="form-check">
-                        <label for="check1" class="form-check-label font-size-14">전체 동의 <span class="text-danger">*</span></label>
-                        <input type="checkbox" class="form-check-input" id="check1" onchange="MemberRegJS.check1Clicked();" >
-                </div>
-                <div class="form-check">
-                    <label for="check2" class="form-check-label font-size-14">개인정보 수집 및 이용 동의(필수) <span class="text-danger">*</span></label>
-                    <input type="checkbox" class="form-check-input" id="check2" onchange="MemberRegJS.checkOrderClick();" placeholder="">
-                </div>
-                <div class="form-check">
-                    <label for="check3" class="form-check-label font-size-14">개인정보 취급위탁 동의(필수) <span class="text-danger">*</span></label>
-                    <input type="checkbox" class="form-check-input" id="check3" onchange="MemberRegJS.checkOrderClick();" placeholder="">
-                </div>
-                <div class="form-check">
-                    <label for="check4" class="form-check-label font-size-14">개인정보 국외이전 동의(필수) <span class="text-danger">*</span></label>
-                    <input type="checkbox" class="form-check-input" id="check4" onchange="MemberRegJS.checkOrderClick();" placeholder="">
-                </div>
 
-                <div class="form-check">
-                    <label for="check5" class="form-check-label font-size-14">개인정보 공유 및 제공(제3자) 동의(필수) <span class="text-danger">*</span></label>
-                    <input type="checkbox" class="form-check-input" id="check5" onchange="MemberRegJS.checkOrderClick();" placeholder="">
-                </div>
-
-                <div class="form-check">
-                    <label for="check6" class="form-check-label font-size-14">서비스 이용약관(필수) <span class="text-danger">*</span></label>
-                    <input type="checkbox" class="form-check-input" id="check6" onchange="MemberRegJS.checkOrderClick();" placeholder="">
-                </div>
-                <div class="form-check">
-                    <label for="check7" class="form-check-label font-size-14">만 16세 이상 서비스 이용 동의(필수) <span class="text-danger">*</span></label>
-                    <input type="checkbox" class="form-check-input" id="check7" onchange="MemberRegJS.checkOrderClick();" placeholder="">
-                </div>
-                <div class="form-check">
-                    <label for="check8" class="form-check-label font-size-14">마케팅 수신동의(선택) <span class="text-danger">*</span></label>
-                    <input type="checkbox" class="form-check-input" id="check8" onchange="MemberRegJS.checkOrderClick();" placeholder="">
-                </div>
-                </form>
-                <!-- cencel and submit button -->
-                <div class="form-gruop">
-                    <button type="button" class="btn btn-secondary">취소</button>
-                    <button type="submit" class="btn btn-primary" onclick="MemberRegJS.inputNullCheckFunction();">등록</button>
-                </div>
+@if (Model != null && Model.Equals("LoginFail"))
+{
+    <p>Login failed. Please try again.</p>
+}
+<!-- Modal -->
+<div class="modal fade" id="MemberRegFailModal" tabindex="-1" role="dialog" aria-labelledby="MemberRegFailLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="MemberRegFailLabel">회원가입 실패</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p> </p>
+                <p>이미 등록된 계정입니다. </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary closeBtn" data-dismiss="modal">닫기</button>
             </div>
         </div>
     </div>
-</section>
-*@
+</div>
+
 <script>
     let MemberRegJS = {
+        init: function () {
+            this.setEvent();
+        },
+        setEvent : function(){
+            $('#input-form').submit(function (e) {
+                e.preventDefault();
+                if(MemberRegJS.inputNullCheckFunction()){
+                    this.submit();
+                };
+            });
+        },
         daumAddressAPI : function(){
             //daum 주소 API
             new daum.Postcode({
@@ -450,7 +304,7 @@
                 alert('이용약관에 동의해주세요.');
                 return false;
             }
-            MemberRegJS.MemberRegSubmit();
+            return true;
         },
         MemberJoinReqest : function(){
             //form data create obj end ajax request CommonMember/MemberReg
@@ -498,8 +352,94 @@
         MemberRegSubmit : function(){
             // id input-form submit
             $('#input-form').submit();
-        }
+        },
+        MemberRegSubmitEvent: function () {
+            // id input-form submit event
+            $('#input-form').submit(function (e) {
+                e.preventDefault();
+                if (MemberRegJS.MemberRegCheck()) {
+                    MemberRegJS.MemberJoinReqest();
+                }
+            });
+        },
+        IdCheckClicked: function () {
+            if (MemberRegJS.isEmpty($('#input-Id').val())) {
+                alert('아이디를 입력해주세요.');
+                $('#input-Id').focus();
+                return false;
+            }
+            $.ajax({
+                url: '/CommonMember/CheckID',
+                type: 'POST',
+                data: { id: $('#input-Id').val() },
+                success: function (data) {
+                    if (data.result == 'success') {
+                        alert('사용가능한 아이디입니다.');
+                        // .idCheckBtn button class btn-primary to btn-default
+                        $('.idCheckBtn').removeClass('btn-outline-success');
+                        $('.idCheckBtn').addClass('btn-default');
+                        // .idCheckBtn button class disabled
+                        $('.idCheckBtn').attr('disabled', true);
+                            
+                    }
+                    else {
+                        alert('이미 사용중인 아이디입니다.');
+                        $('#input-Id').focus();
+                    }
+                },
+                error: function (request, status, error) {
+                    alert('아이디 중복체크에 실패하였습니다.');
+                    // .idCheckBtn button class btn-primary to btn-default
+                    $('.idCheckBtn').removeClass('btn-outline-success');
+                    $('.idCheckBtn').addClass('btn-default');
+                    // .idCheckBtn button class disabled
+                    $('.idCheckBtn').attr('disabled', true);
+                }
+            });
+        },
+        PhoneCheckClicked: function () {
+            if (MemberRegJS.isEmpty($('#input-Phone').val())) {
+                alert('휴대폰 번호를 입력해주세요.');
+                $('#input-Phone').focus();
+                return false;
+            }
+            $.ajax({
+                url: '/CommonMember/CheckPhone',
+                type: 'POST',
+                data: { phone: $('#input-Phone').val() },
+                success: function (data) {
+                    if (data.result == 'success') {
+                        alert('사용가능한 휴대폰 번호입니다.');
+                        $('.phoneCheckBtn').removeClass('btn-outline-success');
+                        $('.phoneCheckBtn').addClass('btn-default');
+                        // .idCheckBtn button class disabled
+                        $('.phoneCheckBtn').attr('disabled', true);
+                    }
+                    else {
+                        alert('이미 사용중인 휴대폰 번호입니다.');
+                        $('#input-Phone').focus();
+                    }
+                },
+                error: function (request, status, error) {
+                    alert('휴대폰 번호 중복체크에 실패하였습니다.');
+                    $('.phoneCheckBtn').removeClass('btn-outline-success');
+                    $('.phoneCheckBtn').addClass('btn-default');
+                    // .idCheckBtn button class disabled
+                    $('.phoneCheckBtn').attr('disabled', true);
+                }
+            })
+        },
     }
+
+    $(document).ready(function () {
+        MemberRegJS.init();
+    });
+
+    $(".btn-close, .closeBtn").click(function () {
+        $('#loginFailModal').modal('hide');
+        $('#loginSuccessModal').modal('hide');
+    });
+
 </script>
 
 

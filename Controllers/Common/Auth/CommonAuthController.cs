@@ -21,8 +21,18 @@ namespace Ki4C_Solution.Controllers.Common.Auth
                 //TODO : login logic
                 return RedirectToAction("Index", "Home");
             }
+            ViewData["ResultText"] = "LoginFail";
             return View("../Common/Auth/Login");
         }
+        public IActionResult LogoutPage()
+        {
+            return View("../Common/Auth/Logout");
+        }
+        public IActionResult Logout()
+        {
+            return RedirectToAction("Login", "CommonAuth");
+        }
+
 
         // Views/Common/Auth/FindIdInput
         public IActionResult FindIdInput()

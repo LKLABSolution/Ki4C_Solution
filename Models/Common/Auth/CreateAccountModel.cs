@@ -7,7 +7,7 @@ namespace Ki4C_Solution.Models.Common.Auth
     {
         [Required(ErrorMessage = "아이디를 입력해주세요.")]
         [Display(Name = "아이디")]
-        public string Username { get; set; }
+        public string Id { get; set; }
 
         [Required(ErrorMessage = "비밀번호를 입력해주세요.")]
         [Display(Name = "비밀번호")]

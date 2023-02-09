@@ -2,9 +2,314 @@
     // Used Table [Member]
     // 마이페이지 - 내 정보 수정
     ViewData["Title"] = "MyInfoUpdate Page";
+    @model Ki4C_Solution.Models.Common.Member.MemberRegModel
 }
 
-<div class="text-center">
-    <h1 class="display-4">MyInfoUpdate Page</h1>
-    <p>MyInfoUpdate Page.</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <h3 class="text-center font-weight-light my-4">계정 업데이트</h3>
+                    <div class="d-flex justify-content-end">
+                        <a href="#">Home</a> &gt; 계정 업데이트
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="MemberMypage" asp-action="MyInfoUpdateConfirm" method="post" id="input-form">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Id" type="text" placeholder=" " asp-for="ID" value="@Model.ID" readonly />
+                            <label for="input-Id">아이디<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Password" type="password" placeholder=" " asp-for="Password" value=""  />
+                            <label for="input-Password">비밀번호<a style="color: red;">*</a></label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Password-Check" type="password" placeholder=" " asp-for="PasswordConfirm" value="" />
+                            <label for="input-Password-Check">비밀번호 확인<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Name" type="text" placeholder=" " asp-for="Name" value="@Model.Name" readonly />
+                            <label for="input-Name">이름<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Email" type="email" placeholder=" " asp-for="Email" value="@Model.Email" readonly />
+                            <label for="input-Email">이메일<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Phone" type="text" placeholder=" " asp-for="Phone" value="@Model.Phone" readonly />
+                            <label for="input-Phone">휴대폰 번호<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Address" type="text" placeholder=" " asp-for="Address" value="@Model.Address"  />
+                            <label for="input-Address">주소<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Address-Detail" type="text" placeholder=" " asp-for="AddressDetail" value="@Model.AddressDetail" />
+                            <label for="input-Address-Detail">상세 주소<a style="color: red;">*</a></label>
+                        </div>
+                        <!-- 주민 번호-->
+                        @*
+                        <div class="form-floating mb-3">
+                        <input class="form-control" id="input-Resident-Number" type="text" placeholder=" " asp-for="ResidentNumber" readonly/>
+                        <label for="input-Resident-Number">주민번호</label>
+                        </div>
+                        *@
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Company" type="text" placeholder=" " asp-for="Company" value="@Model.Company" readonly />
+                            <label for="input-Company">회사명<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Department" type="text" placeholder=" " asp-for="Department" value="@Model.Department"  />
+                            <label for="input-Department">부서명</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="input-Position" type="text" placeholder=" " asp-for="Position" value="@Model.Position"  />
+                            <label for="input-Position">직급</label>
+                        </div>
+                        <div class="d-flex justify-content-center mt-4 mb-0">
+                            <button type="submit" class="btn btn-primary btn-block">수정완료</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center py-3 d-flex justify-content-center">
+                    <div class="small m-2"><a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="index">메인으로 이동</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#input-form").validate({
+            rules: {
+                ID: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 20
+                },
+                Password: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 20
+                },
+                PasswordConfirm: {
+                    required: true,
+                    minlength: 4,
+                    maxlength: 20,
+                    equalTo: "#input-Password"
+                },
+                Name: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 20
+                },
+                Email: {
+                    required: true,
+                    email: true
+                },
+                Phone: {
+                    required: true,
+                    minlength: 10,
+                    maxlength: 11
+                },
+                Address: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 100
+                },
+                AddressDetail: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 100
+                },
+                Company: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 100
+                },
+                Department: {
+                    required: false,
+                    minlength: 2,
+                    maxlength: 100
+                },
+                Position: {
+                    required: false,
+                    minlength: 2,
+                    maxlength: 100
+                }
+            },
+            messages: {
+                ID: {
+                    required: "아이디를 입력해주세요.",
+                    minlength: "아이디는 4자 이상 입력해주세요.",
+                    maxlength: "아이디는 20자 이하로 입력해주세요."
+                },
+                Password: {
+                    required: "비밀번호를 입력해주세요.",
+                    minlength: "비밀번호는 4자 이상 입력해주세요.",
+                    maxlength: "비밀번호는 20자 이하로 입력해주세요."
+                },
+                PasswordConfirm: {
+                    required: "비밀번호를 입력해주세요.",
+                    minlength: "비밀번호는 4자 이상 입력해주세요.",
+                    maxlength: "비밀번호는 20자 이하로 입력해주세요.",
+                    equalTo: "비밀번호가 일치하지 않습니다."
+                },
+                Name: {
+                    required: "이름을 입력해주세요.",
+                    minlength: "이름은 2자 이상 입력해주세요.",
+                    maxlength: "이름
+                },
+                Email: {
+                    required: "이메일을 입력해주세요.",
+                    email: "이메일 형식이 올바르지 않습니다."
+                },
+                Phone: {
+                    required: "전화번호를 입력해주세요.",
+                    minlength: "전화번호는 10자 이상 입력해주세요.",
+                    maxlength: "전화번호는 11자 이하로 입력해주세요."
+                },
+                Address: {
+                    required: "주소를 입력해주세요.",
+                    minlength: "주소는 2자 이상 입력해주세요.",
+                    maxlength: "주소는 100자 이하로 입력해주세요."
+                },
+                AddressDetail: {
+                    required: "상세주소를 입력해주세요.",
+                    minlength: "상세주소는 2자 이상 입력해주세요.",
+                    maxlength: "상세주소는 100자 이하로 입력해주세요."
+                },
+                Company: {
+                    required: "회사명을 입력해주세요.",
+                    minlength: "회사명은 2자 이상 입력해주세요.",
+                    maxlength: "회사명은 100자 이하로 입력해주세요."
+                },
+                Department: {
+                    required: "부서명을 입력해주세요.",
+                    minlength: "부서명은 2자 이상 입력해주세요.",
+                    maxlength: "부서명은 100자 이하로 입력해주세요."
+                },
+                Position: {
+                    required: "직급을 입력해주세요.",
+                    minlength: "직급은 2자 이상 입력해주세요.",
+                    maxlength: "직급은 100자 이하로 입력해주세요."
+                }
+            },
+            errorPlacement: function (error, element) {
+                error.appendTo(element.parent());
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
+    });
+
+
+    let MyInfoUpdateJS = {
+        init: function () {
+            this.initEvent();
+        },
+        initEvent: function () {
+            $("#btnUpdate").on("click", function () {
+                MyInfoUpdateJS.update();
+            });
+        },
+        update: function () {
+            var form = $("#frm")[0];
+            var formData = new FormData(form);
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "/Member/MyInfoUpdate",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    if (data == "true") {
+                        alert("수정되었습니다.");
+                        location.href = "/Member/MyInfo";
+                    }
+                    else {
+                        alert("수정에 실패했습니다.");
+                    }
+                }
+            });
+        },
+        checkPhone: function () {
+            var Phone = $("#Phone").val();
+            if (Phone == "") {
+                alert("전화번호를 입력해주세요.");
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Member/CheckPhone",
+                data: { Phone: Phone },
+                success: function (data) {
+                    if (data == "true") {
+                        alert("사용 가능한 전화번호입니다.");
+                        $("#Phone").attr("readonly", true);
+                        $("#PhoneCheck").attr("disabled", true);
+                    }
+                    else {
+                        alert("이미 사용중인 전화번호입니다.");
+                    }
+                }
+            });
+        },
+        checkEmail: function () {
+            var Email = $("#Email").val();
+            if (Email == "") {
+                alert("이메일을 입력해주세요.");
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Member/CheckEmail",
+                data: { Email: Email },
+                success: function (data) {
+                    if (data == "true") {
+                        alert("사용 가능한 이메일입니다.");
+                        $("#Email").attr("readonly", true);
+                        $("#EmailCheck").attr("disabled", true);
+                    }
+                    else {
+                        alert("이미 사용중인 이메일입니다.");
+                    }
+                }
+            });
+        },
+        checkID: function () {
+            var ID = $("#ID").val();
+            if (ID == "") {
+                alert("아이디를 입력해주세요.");
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Member/CheckID",
+                data: { ID: ID },
+                success: function (data) {
+                    if (data == "true") {
+                        alert("사용 가능한 아이디입니다.");
+                        $("#ID").attr("readonly", true);
+                        $("#IDCheck").attr("disabled", true);
+                    }
+                    else {
+                        alert("이미 사용중인 아이디입니다.");
+                    }
+                }
+            });
+        }
+        
+    }
+    
+    
+    
+    
+                
+</script>

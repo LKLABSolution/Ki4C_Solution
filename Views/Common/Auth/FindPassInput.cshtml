@@ -2,9 +2,79 @@
     // Used Table [Member]
     //메인 - 로그인 - 비밀번호 찾기 - 비밀번호찾기입력화면
     ViewData["Title"] = "Find Id Input Page";
+    @model Ki4C_Solution.Models.Common.Auth.CreateAccountModel;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Find Id Input Page</h1>
-    <p>Find Id Input Page.</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <h3 class="text-center font-weight-light my-4">비밀번호 찾기</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="CommonAuth" asp-action="FindPassword" method="post" id="input-form">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="Input_Id" type="text" placeholder=" " asp-for="Id" />
+                            <label for="Input_Id">아이디<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="Input_Email" type="email" placeholder=" " asp-for="Email" oninput="this.value=this.value.replace(/(\s*)/g,'').replace(/[^a-zA-Z0-9~!@@#$%^&*()_+|<>?:{}]/g,'').replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g,'').replace(/[^a-zA-Z0-9]/g,'').replace(/[^0-9]/g,'').replace(/[^-]/g,'').replace(/[^-]/g,'').replace(/[^@@]/g,'');"/>
+                            <label for="Input_Email">이메일 주소<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="Input_Phone" type="text" placeholder=" " asp-for="Phone" />
+                            <label for="Input_Phone">휴대폰 번호<a style="color: red;">*</a></label>
+                        </div>
+                        <div class="d-flex justify-content-center mt-4 mb-0">
+                            <button class="btn btn-primary" type="submit" onclick="">비밀번호 찾기</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center py-3">
+                    <div class="small m-2"><a class="btn btn-primary" href="login">로그인</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<script>
+    let FindPassInputJS = {
+        init: function () {
+            this.setEvent();
+        },
+        setEvent: function () {
+            $('#input-form').submit(function (e) {
+                e.preventDefault();
+                let id = $('#Input_Id').val();
+                let email = $('#Input_Email').val();
+                let phone = $('#Input_Phone').val();
+                if (FindPassInputJS.isEmpty(id)) {
+                    alert('아이디를 입력해주세요.');
+                    return;
+                }
+                if (FindPassInputJS.isEmpty(email)) {
+                    alert('이메일을 입력해주세요.');
+                    return;
+                }
+                if (FindPassInputJS.isEmpty(phone)) {
+                    alert('휴대폰 번호를 입력해주세요.');
+                    return;
+                }
+                this.submit();
+            });
+        },
+        isEmpty: function (value) {
+            if (value == null || value == undefined || value == "") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        FindPassInputJS.init();
+    });
+    
+</script>
