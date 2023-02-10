@@ -1,3 +1,7 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,19 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //add Service to the container
+
+
+
+//MySQL Connection localhost:3306 db:ki4c_dx
+
+
+
+string connectionString = "server=localhost;port=3306;database=ki4c_dx;user=root;password=password;";
+
+builder.Services.AddDbContext<DbContext>(options =>
+    options.UseMySQL(connectionString));
+
+
 
 
 
