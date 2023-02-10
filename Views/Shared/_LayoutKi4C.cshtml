@@ -1,102 +1,106 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE HTML>
+<html lang="ko">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Ki4C_Solution</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Ki4C_Solution.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ki4C</title>
+    <link rel="stylesheet" type="text/css" href="~/index/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/index/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="~/index/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="~/index/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="~/index/css/default.css">
+    <link rel="shortcut icon" href="~/index/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="~/index/images/favicon/indigo-touch-icon.png">
+    <script src="~/index/js/jquery.min.js"></script>
+    <script src="~/index/js/indigo.min.js"></script>
+    <link rel="stylesheet" href="~/index/css/nav-footer.css">
 </head>
 <body>
-@*    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ki4C_Solution</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TViewPageList">TViewPageList</a>
-                        </li>
+    <div id="wrap">
+        <!-- header ------------------------------------------ -->
+        <header class="header cfixed">
+            <h1 class="logo"><a href="">Ki4C</a></h1>
+        </header>
+        <!-- //header -->
+        <!-- nav --------------------------------------------- -->
+        <nav>
+            <div class="container">
+                <ul class="leftMenu">
+                    <li><a href="galary.html">홈</a></li>
+                    <li class="dropBox">
+                        <a href="board.html">회사소개</a>
+                        <span class="dropmenu">
+                            <span><a href="#">인사말</a></span>
+                            <span><a href="#">DX 소개</a></span>
+                            <span><a href="#">찾아오시는 길</a></span>
+                        </span>
+                    </li>
+                    <li class="dropBox">
+                        <a href="">DX진단</a>
+                        <span class="dropmenu">
+                            <span><a href="#">무료체험</a></span>
+                            <span><a href="#">전문가 진단</a></span>
+                        </span>
+                    </li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">기타</a></li>
+                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="TViewPageList">TViewPageList</a></li>
+                </ul>
+                <ul class="rightMenu">
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a class="text-primary" asp-area="" asp-controller="CommonAuth" asp-action="Login">로그인</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //nav -->
+        <span class="menu-toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+
+
+        
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p class="copyright">
+                <br />
+                <br />
+
+            </p>
+        </footer>
+
+        <div class="footer_wrap">
+            <div class="footer_menu">
+                <div class="relative">
+                    <ul>
+                        <li><a href="">회사소개</a></li>
+                        <li><a href="">DX진단</a></li>
+                        <li><a href="">회원약관</a></li>
+                        <li><a href="">개인정보처리방침</a></li>
+                        <li><a href="">...</a></li>
+                        <li><a href="">기타</a></li>
                     </ul>
                 </div>
             </div>
-        </nav>
-    </header>*@
-    <div style="padding: 10px 5px 0 20px">케이아이포씨(Ki4C) 협동조합</div>
-    <hr />
-    <nav id="nav_1">
-        <a style="padding: 0 5px 0 20px" asp-area="" asp-controller="Home" asp-action="Index">홈</a>
-        <a href="#" style="padding: 0 5px">회사소개</a>
-        <a href="#" style="padding: 0 5px">DX 진단</a>
-        <a style="padding: 0 5px" asp-area="" asp-controller="Home" asp-action="TViewPageList">TViewPageList</a>
-        <a style="float:right; padding: 0 10%" asp-area="" asp-controller="CommonAuth" asp-action="Login">로그인</a>
-    </nav>
-    <nav id="nav_2">
-        <input type="checkbox" id="menuicon">
-        <label for="menuicon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <div class="sidebar">
-            <ul style="list-style:none; padding-left:0px;">
-                <li style="padding: 10px 0 0 10px;"><a href="#">홈</a></li>
-                <li style="padding: 10px 0 0 10px;"><a href="#">회사 소개</a></li>
-                <li style="padding: 10px 0 0 20px;"><a href="#">인사말</a></li>
-                <li style="padding: 10px 0 0 20px;"><a href="#">DX 소개</a></li>
-                <li style="padding: 10px 0 0 20px;"><a href="#">찾아오시는 길</a></li>
-                <li style="padding: 10px 0 50px 10px;"><a href="#">DX 진단</a></li>
-                <hr style="border: solid 1px grey;">
-                <li style="padding: 0px 0 0 50px;"><a href="#">로그인</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            <div style="position:relative; height:200px; padding-top: 10px;">
-                <div style="padding: 0 10%;">
-                    <span>
-                        <a href="#"> 무료 체험 > </a>
-                    </span>
-                    <details style="float:right;">
-                        <summary></summary>
-                        <a href="#"> 사이트1 </a>
-                    </details>
-                    <span style="float:right; padding-right: 10px;">
-                        패밀리사이트
-                    </span>
-                </div>
-                <div style="position:absolute; bottom: 20px; padding: 0 10%;">
-                    <a href="#">개인정보처리방침</a> | 
-                    <a href="#">이용 약관</a> | 
-                    <a href="#">서비스 이용약관</a> | 
-                    <a href="#">이메일무단수집거부</a> | 
-                    <a href="#">아이디어 정책</a> | 
-                    <br>
-                    케아이이포씨(KI4C) 협동조합 TEL: 02)2088-5953 Mobile: 010-2563-8514 FAX: 02)0244-8009 E-MAIL: kkkkbim@naver.com <br>
-                    Copyright@2020 <a asp-area="" asp-controller="Home" asp-action="Privacy">케이아이포씨(Ki4C) 협동조합</a>. ALL RIGHTS RESERVED.
+            <div class="footer_info">
+                <img src="">
+                <p class="p1">케이아이포씨(Ki4C) 협동조합 TEL : 02)2088-5953 Mobile : 010-2563-9514 .</p>
+
+                <div class="service_center_info">
+                    <p class="p2">개인정보처리방침 | 이용약관 | 서비스 이용약관 | 이메일무단수집거부 | 아이디어 정책</p>
+                    <p class="p1">Copyrightⓒ2020 케이아이포씨(Ki4C) 협동조합. ALL RIGHTS RESERVED.</p>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
