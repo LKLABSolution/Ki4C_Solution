@@ -36,9 +36,12 @@ namespace Ki4C_Solution.Controllers.Common.Member
             if (ModelState.IsValid)
             {
                 //TODO : login logic
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("MemberRegFinished", "CommonMember");
             }
-            return View("../Common/Member/MemberReg");
+            string resultText = "LoginFail";
+            return View("../Common/Member/MemberReg", resultText);
         }
+        
+
     }
 }
